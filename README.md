@@ -4,9 +4,9 @@ Framework is a CSS framework I wrote back in 2014. Please see examples folder fo
 
 ### Requirements
 
-Jquery 1.8.3 +
+- Jquery 1.8.3 +
 
-Less.js
+- Less.js
 
 ### Browser Support
 

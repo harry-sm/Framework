@@ -1,0 +1,395 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+
+
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+
+<link rel="stylesheet" href="./resources/css/theme.css"/>
+
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/button.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/tabs.css">
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+
+
+
+<title>Tabs</title>
+
+</head>
+<body>
+
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+            <h2 class="title">Tabs</h2>
+            <p>An tab menu displays a single piece of content, while allowing the option of displaying other related content</p>
+            
+            
+            <div class="inner">
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Tabs Left</h3>
+                    <p>Add class <code>.tabs-left</code> to <code>.tab-bx</code> element to have tabs align left of tab panes</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="tab-bx tabs-left">
+                            <ul class="tab-controls">
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 1</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 2</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 3</a></li>
+                            </ul>
+                            <div class="tab-body">
+                                <div class="tab-panes sk-sand">
+                                     <div class="tab-content">
+                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;tab-bx tabs-left&quot;&gt;
+                            &lt;ul class=&quot;tab-controls&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;sk-grn tab-btns has-states&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;sk-grn tab-btns has-states&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;sk-grn tab-btns has-states&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                            &lt;div class=&quot;tab-body&quot;&gt;
+                                &lt;div class=&quot;tab-panes sk-sand&quot;&gt;
+                                     &lt;div class=&quot;tab-content&quot;&gt;
+                                     &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;tab-panes sk-sand&quot;&gt;
+                                    &lt;div class=&quot;tab-content&quot;&gt;
+                                         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;tab-panes sk-sand&quot;&gt;
+                                    &lt;div class=&quot;tab-content&quot;&gt;
+                                         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                    &lt;/div&gt;
+                                &lt;/div&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;        	
+                    </pre>
+                    
+                    <pre class="code language-js" data-lang="javascript">
+                        $('.tab-bx').tabs({
+                            animate	: 'scaleIn'
+                        });
+                        var tabBx1 = $('.tab-bx').data("tabs");
+                        	tabBx1.changeTab(1);
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Tabs Right</h3>
+                    <p>Add class <code>.tabs-right</code> to <code>.tab-bx</code> element to have tabs align right of tab panes</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="tab-bx tabs-right">
+                            <ul class="tab-controls">
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 1</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 2</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 3</a></li>
+                            </ul>
+                            <div class="tab-body">
+                                <div class="tab-panes sk-sand">
+                                     <div class="tab-content">
+                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;tab-bx tabs-right&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/div&gt;
+                    </pre>
+                    
+                </div>
+            </div>
+            
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Tabs Top</h3>
+                    <p>Add class <code>.tabs-top</code> to <code>.tab-bx</code> element to have tabs align top of tab panes</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="tab-bx tabs-top">
+                            <ul class="tab-controls">
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 1</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 2</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 3</a></li>
+                            </ul>
+                            <div class="tab-body">
+                                <div class="tab-panes sk-sand">
+                                     <div class="tab-content">
+                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;tab-bx tabs-top&quot;&gt;
+                           &lt; ... /&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Tabs Bottom</h3>
+                    <p>Add class <code>.tabs-bottom</code> to <code>tab-bx</code> element and move <code>.tab-controls</code> below <code>.tab-body</code> to have tabs align below tab panes</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="tab-bx tabs-bottom">
+                            <div class="tab-body">
+                                <div class="tab-panes sk-sand">
+                                     <div class="tab-content">
+                                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                                <div class="tab-panes sk-sand">
+                                    <div class="tab-content">
+                                         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <ul class="tab-controls">
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 1</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 2</a></li>
+                                <li><a href="#" class="sk-grn tab-btns has-states">tab 3</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;tab-bx tabs-bottom&quot;&gt;
+                            &lt;div class=&quot;tab-body&quot;&gt;                
+                                &lt; ... /&gt;                    
+                            &lt;/div&gt;
+                            &lt;ul class=&quot;tab-controls&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;sk-grn tab-btns has-states&quot;&gt;Tab 1&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;sk-grn tab-btns has-states&quot;&gt;Tab 2&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot; class=&quot;sk-grn tab-btns has-states&quot;&gt;Tab 3&lt;/a&gt;&lt;/li&gt;
+                            &lt;/ul&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            
+            <div class="params">
+                <h3 class="ui header">Options</h3>
+          
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                        <tr>
+                            <th>Options</th>
+                            <th>Defaults</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<tr>
+                            <td><strong>debug</strong></td>
+                            <td>true</td>
+                            <td>Outputs error meaages or warnings to the console</td>
+                        </tr>
+                        <tr>
+                            <td><strong>tabs</strong></td>
+                            <td>'.tab-btns'</td>
+                            <td>Get tab buttons</td>
+                        </tr>
+                        <tr>
+                            <td><strong>tabPanes</strong></td>
+                            <td>'.tab-panes'</td>
+                            <td>Get tab panes that holds the content</td>
+                        </tr>
+                        <tr>
+                            <td><strong>animate</strong></td>
+                            <td>scaleIn</td>
+                            <td>Type animation that should be applied. These are pre written css classes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            
+            <div class="params">
+                <h3 class="ui header">Methods</h3>
+          
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                         <tr>
+                            <th>Methods</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Destroy</strong></td>
+                            <td>Removes all changes to the page made by initialization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>reInitilize</strong></td>
+                            <td>Refreshes cached values for a component after Destroy is called</td>
+                        </tr>
+                        <tr>
+                            <td><strong>changeTab</strong></td>
+                            <td>Opens tab content at index</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            </div>
+        </div> <!--page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+<script>
+$(function () {
+	$('.tab-bx').tabs();
+	var tab1 = $('.tab-bx').data("tabs");
+	tab1.changeTab(1);
+	
+	});
+
+</script>
+
+
+<script src="../js/core.js"></script>
+<script src="../js/tabs.js"></script>
+
+<script src="resources/js/app.js"></script>
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+
+</body>
+</html>

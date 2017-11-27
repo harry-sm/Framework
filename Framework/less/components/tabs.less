@@ -1,0 +1,211 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+/*---------------------------------------------------------*
+	Modal
+ *---------------------------------------------------------*/
+/*
+ * Dependnce: button.less
+ */
+
+.tab-bx {
+	width:100%;
+	max-width:600px;
+	position:relative;
+	
+	.show {
+		position: relative;
+		visibility: visible;
+		
+		.tab-content {
+			z-index: auto;
+			position:relative;
+			}
+		}
+	
+	/*
+	 * Animations
+	 */
+
+	&.fadeIn {
+		.tab-content{
+			opacity: 0;
+			}
+		.show > .tab-content {
+			opacity: 1;
+			}
+		}
+	&.scaleIn {
+		.tab-content{
+			opacity: 0;
+			.scale(.5)
+			}
+		.show > .tab-content {
+			opacity:1;
+			.scale(1)
+			} 
+		}
+	&.scaleOut {
+		.tab-content {
+			opacity: 0;
+			.scale(1.2)
+			}
+		.show > .tab-content {
+			opacity:1;
+			.scale(1)
+			}
+		}
+		
+	&.slideLeft {
+		.tab-content{
+			opacity: 0;
+			.translate( -100%, 0 )
+			}
+		.show > .tab-content{
+			opacity:1;
+			.translate( 0, 0 )
+			}
+		}
+	&.slideRight {
+		.tab-content {
+			opacity: 0;
+			.translate( 100%, 0 )
+			}
+		.show > .tab-content {
+			opacity: 1;
+			.translate( 0, 0 )
+			}
+		}
+	&.slideUp {
+		.tab-content {
+			opacity: 0;
+			.translate( 0,100% )
+			}
+		.show > .accordian-content {
+			opacity: 1;
+			.translate( 0, 0)
+			}
+		}
+	&.slideDown {
+		.tab-content {
+			opacity: 0;
+			.translate( 0,-100% )
+			}
+		.show > .accordian-content {
+			opacity:1;
+			.translate( 0, 0 )
+			}
+		}
+	&.flip {
+		.tab-panel {
+			.perspective;
+			}
+		.tab-content {
+			opacity: 0;
+			.rotateY( 90deg );
+			}
+		.show > .tab-content {
+			opacity:1;
+			.rotateY( 0deg );
+			}
+		}
+	
+	& > .tab-controls {
+		  margin:0;
+		  padding:0;
+		  width:100%;
+		  
+		  display:table;
+		  
+		  position: relative;
+		  z-index: 1;
+		  
+		  & > li {
+				margin-right: 1px;
+				display: inline-block;
+			  }
+		  & .tab-btns {
+			  padding: 10px 29px;
+			  position: relative;
+			  display: block;
+			
+			  text-decoration: none;
+			  line-height: 1.428571429;
+			  
+			  &.is-active {
+				  border-color: #34495e;
+		  		  border-style: solid;
+				  background: #f5f5f5;
+				  color:#333;
+				  }
+			  }
+		}
+	}
+ 
+/*
+ * tab alignment
+ */
+
+.tab-panes {
+	visibility:hidden;
+	position: absolute;
+	overflow: hidden;
+	}
+.tab-bx.tabs-top {
+	.tab-panes {
+		}
+	.tab-controls {
+		margin-bottom: -2px;
+		
+		& .tab-btns.is-active {
+			border-width:2px 0 0;
+			}
+		}
+	}
+.tab-bx.tabs-bottom > .tab-controls {
+	  & .tab-btns.is-active {
+		  border-width:0 0 2px;
+		}
+	}
+.tab-bx.tabs-left > .tab-controls,
+.tab-bx.tabs-right > .tab-controls {
+	  width:auto;
+	  height:100%;
+	}
+.tab-bx.tabs-left > .tab-controls {
+  float: left;
+
+   & .tab-btns.is-active {
+		border-width:0 0 0 2px;
+		}
+	}
+.tab-bx.tabs-right > .tab-controls {
+  float: right;
+  
+   & .tab-btns.is-active {
+		border-width:0 2px 0 0;
+		}
+	}
+.tab-bx.tabs-left > .tab-controls > li,
+.tab-bx.tabs-right > .tab-controls > li {
+  width: 100%;
+  display: block;
+  margin-bottom: 2px;
+	}
+
+/*
+ * tabcomponrnt
+ */
+
+.tab-content{
+	padding: 1em;
+	
+	z-index:-1;
+	position: absolute;
+	.transition(~'all .3s ease-in');
+	overflow:hidden;
+	}
+
+@import "../utilities/config.less";
+@import "../utilities/utilities.less";

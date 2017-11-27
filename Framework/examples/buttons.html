@@ -1,0 +1,274 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="resources/css/structures/layout.css"/>
+<link rel="stylesheet" type="text/css" href="resources/css/theme.css">
+
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/button.css">
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+
+
+<title>Buttons</title>
+
+</head>
+<body>
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+       		<h2 class="title">Buttons</h2>
+            <div class="inner">
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Defualt Buttons</h3>
+                    <p>To render a default button add class <code>.btn</code> to any html element you wish to be viewed as a button </p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <button class="btn flat sk-grn has-states">Button</button>
+                        <button class="btn flat sk-blu has-states">Button</button>
+                        <button class="btn flat sk-org has-states">Button</button>
+                        <button class="btn flat sk-red has-states">Button</button>
+                        <button class="btn flat sk-gry has-states">Button</button>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;button class=&quot;btn flat sk-grn has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sk-blu has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sk-org has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sk-red has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sk-gry has-states&quot;&gt;Button&lt;/button&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Stacked Buttons</h3>
+                    <p>Add class <code>btn-group-statcked</code> to wrapper element and place buttons inside.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="btn-group-statcked">
+                            <button class="btn flat sk-grn has-states">Button</button>
+                            <button class="btn flat sk-blu has-states">Button</button>
+                            <button class="btn flat sk-org has-states">Button</button>
+                            <button class="btn flat sk-red has-states">Button</button>
+                            <button class="btn flat sk-gry has-states">Button</button>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;btn-group-statcked&quot;&gt;
+                            &lt;button class=&quot;btn flat sk-grn has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-blu has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-org has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-red has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-gry has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Inline Buttons</h3>
+                    <p>Add class <code>btn-group-inline</code> to wrapper element and place buttons inside.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="btn-group-inline">
+                            <button class="btn flat sk-grn has-states">Button</button>
+                            <button class="btn flat sk-blu has-states">Button</button>
+                            <button class="btn flat sk-org has-states">Button</button>
+                            <button class="btn flat sk-red has-states">Button</button>
+                            <button class="btn flat sk-gry has-states">Button</button>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;btn-group-inline&quot;&gt;
+                            &lt;button class=&quot;btn flat sk-grn has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-blu has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-org has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-red has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;button class=&quot;btn flat sk-gry has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Fluid Inline Buttons</h3>
+                    <p>Add classes <code>btn-group-inline</code> and <code>fluid</code> to wrapper element. Place each button element into a <code>fluid-btn</code> element. See example below</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="btn-group-inline fluid">
+                            <div class="fluid-btn">
+                                <button class="btn flat sk-grn has-states">Button</button>
+                            </div>
+                            <div class="fluid-btn">
+                                <button class="btn flat sk-blu has-states">Button</button>
+                            </div>
+                            <div class="fluid-btn">
+                                <button class="btn flat sk-org has-states">Button</button>
+                            </div>
+                            <div class="fluid-btn">
+                                <button class="btn flat sk-red has-states">Button</button>
+                            </div>
+                            <div class="fluid-btn">
+                                <button class="btn flat sk-gry has-states">Button</button>
+                            </div>
+                        </div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;btn-group-inline fluid&quot;&gt;
+                            &lt;div class=&quot;fluid-btn&quot;&gt;
+                                &lt;button class=&quot;btn flat sk-grn has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;fluid-btn&quot;&gt;
+                                &lt;button class=&quot;btn flat sk-blu has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;fluid-btn&quot;&gt;
+                                &lt;button class=&quot;btn flat sk-org has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;fluid-btn&quot;&gt;
+                                &lt;button class=&quot;btn flat sk-red has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;fluid-btn&quot;&gt;
+                                &lt;button class=&quot;btn flat sk-gry has-states&quot;&gt;Button&lt;/button&gt;
+                            &lt;/div&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Size Buttons</h3>
+                    <p>Add class <code>sz-</code> to button. <code>sz-xs</code> - extra small <code>sz-sm</code> - small <code>sz-lg</code> - large <code>sz-xl</code> - Extra large</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <button class="btn flat sz-xs sk-grn has-states">Button</button>
+                        <button class="btn flat sz-sm sk-blu has-states">Button</button>
+                        <button class="btn flat sk-org has-states">Button</button>
+                        <button class="btn flat sz-lg sk-red has-states">Button</button>
+                        <button class="btn flat sz-xl sk-gry has-states">Button</button>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;button class=&quot;btn flat sz-xs sk-grn has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sz-sm sk-blu has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sk-org has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sz-lg sk-red has-states&quot;&gt;Button&lt;/button&gt;
+                        &lt;button class=&quot;btn flat sz-xl sk-gry has-states&quot;&gt;Button&lt;/button&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Disabled Buttons</h3>
+                    <p>Add the <code>disabled</code> attribute or class <code>.disabled</code> to button to prevent user interaction.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <button class="btn flat sk-grn has-states" disabled>Button</button>
+                        <a href="#" class="btn flat sk-blu has-states disabled">Button</a>
+                        <div class="btn flat sk-org has-states disabled">Button</div>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;button class=&quot;btn flat sk-grn has-states&quot; disabled&gt;Button&lt;/button&gt;
+                        &lt;a href=&quot;#&quot; class=&quot;btn flat sk-blu has-states disabled&quot;&gt;Button&lt;/a&gt;
+                        &lt;div class=&quot;btn flat sk-org has-states disabled&quot;&gt;Button&lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            
+            </div>
+        </div><!---page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+<script src="resources/js/app.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+
+
+</body>
+</html>

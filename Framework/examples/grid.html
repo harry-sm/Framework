@@ -1,0 +1,397 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="resources/css/theme.css"/>
+
+<link rel="stylesheet" type="text/css" href="resources/css/structures/form.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+<link rel="stylesheet" href="resources/css/structures/layout.css"/>
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+
+
+<!-- div.component>h2.header+div.descript+pre.code>code>h3.title+p^div.component-example -->
+<title>Grid</title>
+</head>
+<body>
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side --> 
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+
+
+		<h2 class="title">Grid</h2>
+
+
+        <div class="example">
+            <div class="example-label">
+                <h3>Configuring the LESS variables</h3>
+                <p>The grid defaults to a 24  column (bricks), 960 pixel grid system. Customize the columns, gutters, grid with unit type(px, em, %, rem). Variables are loacted in <strong>grid.less</strong> file</p>
+            </div>
+            <div class="components">
+                
+                <pre class="code highlight" data-lang="less">
+                    @wall: 960;
+                    @bricks: 24;
+                    @gutter: 10;
+                    @unit: 1px; 
+                </pre>
+            </div>
+        </div>
+        
+        <div class="example">
+            <div class="example-label">
+                <h3>Auto Generate Grid</h3>
+                <p>You can auto generate all the classes for the grid by importing the gird.less file to your working file and calling the autoGrid mixin in your less file. You can also pass in a parameter that makes you name the class of your columns</p>
+            </div>
+            <div class="components">
+                
+                <pre class="code highlight" data-lang="less">
+                    @import 'grid.less';
+                    
+                    .autoGrid(column);
+                </pre>
+            </div>
+        </div>
+        
+        
+        <h2 class="title">Semantic Use</h2>
+        
+        
+        <div class="example">
+            <div class="example-label">
+                <p>By using the <code>bricks()</code> mixin You can take advange of sematics. The mixin comes with four parameters: <strong>@brick</strong> the column number you want to render, <strong>@frame</strong> change the context of the grid width to the column with which allows for nesting, <strong>@gutter</strong> the space between the columns, <strong>@unit</strong> type of unit of measure </p>
+            </div>
+            
+            <div class="components">
+                <pre class="code highlight" data-lang="less">
+                    .class{
+                        .brick( @brick, @frame:@bricks, @gutter:@gutter, @unit:@unit );
+                        ...
+                    }
+                </pre>
+            </div>
+            <div class="params">
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                        <tr>
+                            <th>Parameters</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>@brick</strong></td>
+                            <td>The column number you want to render</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@frame</strong></td>
+                            <td>Change the context of the grid width to the column with which allows for nesting</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@gutter</strong></td>
+                            <td>The space between the columns</td>
+                        </tr>
+                        <tr>
+                            <td><strong>@unit</strong></td>
+                            <td>Type of unit of measure (px, em, rem, %)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        
+        <div class="example">
+            <div class="example-label">
+                <h3>Less</h3>
+                <p></p>
+            </div>
+            <div class="components">
+                
+                <pre class="code highlight" data-lang="less" >
+                    .left-col {
+                        .brick(5)
+                    }
+                    .main {
+                       .brick(14)
+                    }
+                    .right-col {
+                       .brick(5)
+                    }
+                </pre>
+            </div>
+        </div>
+        
+        
+        <div class="example">
+            <div class="example-label">
+                <h3>Html</h3>
+                <p>Lets use these HTML elements. It is recomended that all grid elemets be wrap in a <code>.row</code> element. This forces the parent to conatin the floated elements </p>
+            </div>
+            <div class="components">
+                <div class="render">
+                    <div class="container">
+                        <div class="row">
+                            <div class="brick left-col"><p>Left</p></div>
+                            <div class="brick main"><p>Center</p></div>
+                            <div class="brick right-col"><p>Right</p></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <pre class="code highlight" data-lang="html">
+                    &lt;div class=&quot;container&quot;&gt;
+                        &lt;div class=&quot;row&quot;&gt;
+                            &lt;div class=&quot;left-col&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;main&quot;&gt;&lt;/div&gt;
+                            &lt;div class=&quot;right-col&quot;&gt;&lt;/div&gt;
+                        &lt;/div&gt;
+                    &lt;/div&gt;
+                </pre>
+            </div>
+        </div>
+        
+        
+        <div class="example">
+            <div class="example-label">
+                <h3>Push and Pull</h3>
+                <p><code>.push()</code> and <code>.pull()</code>Use to source order columns.
+                Pass in the column number in the parameter you wish to move that column to that number of column spaces.</p>
+            </div>
+            <div class="components">
+                <div class="render">
+                    <div class="container">
+                        <div class="row">
+                            <div class="brick left-col push-19"><p>Left</p></div>
+                            <div class="brick main pull-5"><p>Center</p></div>
+                            <div class="brick right-col pull-5"><p>Right</p></div>
+                        </div>
+                    </div>
+                </div>
+                
+                <pre class="code highlight" data-lang="less">
+                    .left-col {
+                        .brick(5);
+                        .push(19);
+                    }
+                    .main {
+                       .brick(14);
+                       .pull(5);
+                    }
+                    .right-col {
+                       .brick(5);
+                       .pull(5);
+                    }
+                </pre>
+            </div>
+        </div>
+        
+        <div class="example">
+            <div class="example-label">
+                <h3>Nested</h3>
+                <p>To Nested colums place a <code>.row</code> element inside your existing column. then in your less file call the <code>.brick()</code> minxin and pass in the columm you want and the number of the parent column.</p>
+            </div>
+            <div class="components">
+                <div class="render">
+                    <div class="container">
+                        <div class="row">
+                            <div class="brick left-col">
+                            <p>Left</p>
+                                <div class="row">
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="brick nested-col-2">
+                                        <p>2</p>
+                                    </div>
+                                    <div class="brick nested-col-2">
+                                        <p>2</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brick main">
+                                <p>Center</p>
+                                <div class="row">
+                                    <div class="brick nested-col-1">
+                                        <p>8</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>8</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>8</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="row">
+                                    <div class="brick nested-col-2">
+                                        <p>12</p>
+                                    </div>
+                                    <div class="brick nested-col-3">
+                                        <p>6</p>
+                                    </div>
+                                    <div class="brick nested-col-3">
+                                        <p>6</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="brick right-col">
+                                <p>Right</p>
+                                 <div class="row">
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                    <div class="brick nested-col-1">
+                                        <p>1</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="brick nested-col-2">
+                                        <p>2</p>
+                                    </div>
+                                    <div class="brick nested-col-2">
+                                        <p>2</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <pre class="code highlight" data-lang="less">
+                    .left-col {
+                        .brick(5)
+                    }
+                    .main {
+                       .brick(14)
+                    }
+                    .right-col {
+                       .brick(5)
+                    }
+                    .nested-col-1 {
+                        .brick(6,5);
+                        margin-bottom: 10px;
+                    }            
+                    .nested-col-2{
+                        .brick(12,5);
+                        margin-bottom: 10px;
+                        }            
+                    .main .nested-col-1{
+                        .brick(8,14);
+                        }
+                    .main .nested-col-2{
+                        .brick(12,14);
+                        }
+                    .main .nested-col-3{
+                        .brick(6,14);
+                        }
+                </pre>
+            </div>
+        </div>
+
+	</div><!---page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+
+
+
+
+<script src="resources/js/app.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+</body>
+</html>

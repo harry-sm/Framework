@@ -1,0 +1,585 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="resources/css/structures/layout.css"/>
+<link rel="stylesheet" type="text/css" href="resources/css/theme.css">
+
+
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+<link rel="stylesheet" type="text/css" href="resources/css/structures/form.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/button.css">
+
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+
+<!-- div.component>h2.header+div.descript+pre.code>code>h3.title+p^div.component-example -->
+<title>Forms</title>
+
+</head>
+<body>
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+
+            
+            <div class="inner">
+            <h2 class="title">Fields</h2>
+            <p>To add styling to forms element wrap form element in elements with <code>.field-block</code>  class and add class <code>.field-item</code>. This does not apply to raido and checkboxes</p>
+            <div class="example">
+                <div class="example-label">
+                    <h3>Field</h3>
+                    <p>This is a default input field.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form action="#">
+                            <div class="field-block">
+                                <input type="text" class="field-item">
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;div class=&quot;field-block&quot;&gt;
+                            &lt;label for=&quot;&quot;&gt;label&lt;/label&gt;
+                            &lt;input type=&quot;text&quot; class=&quot;field-item&quot;&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Textarea</h3>
+                    <p>This is a default textarea.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form action="#">
+                            <div class="field-block">
+                                <textarea class="field-item" rows="6"></textarea>
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="language-html" data-lang="html">
+                        &lt;div class=&quot;field-block&quot;&gt;
+                            &lt;textarea class=&quot;field-item&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+                        &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Select Field</h3>
+                    <p>This is a default select field.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form action="#">
+                            <div class="field-block">
+                                <select class="field-item">
+                                    <option value="mango">Mango</option>
+                                    <option value="carrot">Carrot</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="language-html" data-lang="html">
+                       &lt;select class=&quot;field-item&quot;&gt;
+                           &lt;option value=&quot;mango&quot;&gt;Mango&lt;/option&gt;
+                           &lt;option value=&quot;carrot&quot;&gt;Carrot&lt;/option&gt;
+                       &lt;/select&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Mutiple Select Field</h3>
+                    <p>This is a default Mutiple Select Field.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form action="#">
+                            <div class="field-block">
+                                <select class="field-item" multiple>
+                                    <option>Mango</option>
+                                    <option>Banana</option>
+                                    <option>Apple</option>
+                                    <option>Carrot</option>
+                                    <option>Cow</option>
+                                </select>
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="language-html" data-lang="html">
+                       &lt;select class=&quot;field-item&quot;&gt;
+                           &lt;option value=&quot;mango&quot;&gt;Mango&lt;/option&gt;
+                           &lt;option value=&quot;carrot&quot;&gt;Carrot&lt;/option&gt;
+                       &lt;/select&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <h2 class="title">Checkboxs and radios</h2>
+            <p>To add styling to checkboxs and radios wrap form element in elements with <code>.field-block</code> and then <code>.radio</code> or <code>.checkbox</code>. See example for reference</p>
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Checkbox</h3>
+                    <p>This is a default checkbox.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form action="#">
+                            <div class="field-block">
+                                <label for="cold">	
+                                    <div class="check">
+                                        <input id="cold" name="cold" type="checkbox" value="option1">
+                                        <span></span>
+                                    </div>
+                                    Cold
+                                </label>
+                            </div>
+                            <div class="field-block">
+                                <label for="hot">	
+                                    <div class="check">
+                                        <input id="hot" name="hot" type="checkbox" value="option2">
+                                        <span></span>
+                                    </div>
+                                    Hot
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="language-html" data-lang="html">
+                       &lt;div class=&quot;field-block&quot;&gt;
+                          &lt;label for=&quot;cold&quot;&gt;	
+                              &lt;div class=&quot;check&quot;&gt;
+                                  &lt;input id=&quot;cold&quot; name=&quot;cold&quot; type=&quot;checkbox&quot; value=&quot;option1&quot;&gt;
+                                  &lt;span&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                              Cold
+                          &lt;/label&gt;
+                       &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Radio</h3>
+                    <p>This is a default radio.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form action="#">
+                            <div class="field-block">
+                                <label for="red">	
+                                    <div class="radio">
+                                        <input name="radio" id="red" type="radio" value="option1">
+                                        <span></span>
+                                    </div>
+                                    Red
+                                </label>
+                            </div>
+                            <div class="field-block">
+                                <label for="blue">	
+                                    <div class="radio">
+                                        <input name="radio" id="blue" type="radio" value="option2">
+                                        <span></span>
+                                    </div>
+                                    blue
+                                </label>
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="language-html" data-lang="html">
+                       &lt;div class=&quot;field-block&quot;&gt;
+                          &lt;label for=&quot;blue&quot;&gt;	
+                              &lt;div class=&quot;radio&quot;&gt;
+                                  &lt;input name=&quot;radio&quot; id=&quot;blue&quot; type=&quot;radio&quot; value=&quot;option2&quot;&gt;
+                                  &lt;span&gt;&lt;/span&gt;
+                              &lt;/div&gt;
+                              blue
+                          &lt;/label&gt;
+                       &lt;/div&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <h2 class="title">Fields With Addons</h2>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Field</h3>
+                    <p>Place element with <code>.field-addon</code> and sibbling of <code>.field-item</code>
+                    inside a <code>.field-block</code> element.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form>
+                            <div class="field-block">
+                                <input type="text" class="field-item">
+                                <span class="field-addon">Search</span>
+                            </div>
+                        </form>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;form&gt;
+                            &lt;div class=&quot;field-block&quot;&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;field-item&quot;&gt;
+                                &lt;span class=&quot;field-addon&quot;&gt;Search&lt;/span&gt;
+                            &lt;/div&gt;
+                        &lt;/form&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <h2 class="title">Fields States</h2>
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Disabled</h3>
+                        <p>Add the <code>disabled</code> attribute to input to prevent user input.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#">
+                                <div class="field-block">
+                                    <input type="text" class="field-item" disabled>
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;div class=&quot;field-block&quot;&gt;
+                                &lt;label for=&quot;&quot;&gt;label&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;field-item&quot; disabled&gt;
+                            &lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Read Only</h3>
+                        <p>Add the <code>readonly</code> attribute on an input to prevent user input .</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#">
+                                <div class="field-block">
+                                    <input type="text" class="field-item" readonly value="Read Only">
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;div class=&quot;field-block&quot;&gt;
+                                &lt;label for=&quot;&quot;&gt;label&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;field-item&quot; readonly&gt;
+                            &lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Required</h3>
+                        <p>Add the <code>required</code> attribute on an input to indicate to user input is required.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#">
+                                <div class="field-block">
+                                    <input type="text" class="field-item" required>
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;div class=&quot;field-block&quot;&gt;
+                                &lt;label for=&quot;&quot;&gt;label&lt;/label&gt;
+                                &lt;input type=&quot;text&quot; class=&quot;field-item&quot; required&gt;
+                            &lt;/div&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+            
+            	<h2 class="title">Form Layout Variations</h2>
+            
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Default Stacked</h3>
+                        <p>Default view of forms</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#"> 
+                                <div class="field-block">
+                                    <label for="">Username:</label>
+                                    <input type="text" name="user" class="field-item" placeholder="Username">
+                                </div>    
+                                
+                                <div class="field-block">
+                                <label for="">Password:</label>
+                                <input type="password" name="pass" class="field-item" required placeholder="Password">
+                                </div>          
+                                
+                                <div class="field-block">
+                                    <label for="remember">	
+                                        <div class="check">
+                                            <input id="remember" name="remember" type="checkbox">
+                                            <span></span>
+                                        </div>
+                                        Remember Me
+                                    </label>
+                                </div>
+                                
+                                <div class="field-block tr">
+                                    <button type="submit" class="btn flat sk-grn has-states">Submit</button>
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;form;&gt; 
+                                &lt;div class=&quot;field-block&quot;&gt;
+                                    &lt;label for=&quot;&quot;&gt;Username:&lt;/label&gt;
+                                    &lt;input type=&quot;text&quot; name=&quot;user&quot; class=&quot;field-item&quot; placeholder=&quot;Username&quot;&gt;
+                                &lt;/div&gt;    
+                                
+                                &lt;div class=&quot;field-block&quot;&gt;
+                                &lt;label for=&quot;&quot;&gt;Password:&lt;/label&gt;
+                                &lt;input type=&quot;password&quot; name=&quot;pass&quot; class=&quot;field-item&quot; required placeholder=&quot;Password&quot;&gt;
+                                &lt;/div&gt;          
+                                
+                                &lt;div class=&quot;field-block&quot;&gt;
+                                    &lt;label for=&quot;remember&quot;&gt;	
+                                        &lt;div class=&quot;check&quot;&gt;
+                                            &lt;input id=&quot;remember&quot; name=&quot;remember&quot; type=&quot;checkbox&quot;&gt;
+                                            &lt;span&gt;&lt;/span&gt;
+                                        &lt;/div&gt;
+                                        Remember Me
+                                    &lt;/label&gt;
+                                &lt;/div&gt;
+                                
+                                &lt;div class=&quot;field-block tr&quot;&gt;
+                                    &lt;button type=&quot;submit&quot; class=&quot;btn flat sk-grn has-states&quot;&gt;Submit&lt;/button&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Aligned</h3>
+                        <p>Add class <code>field-group-align</code> to container inside the form element and place field element inside it to triger layout.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#">
+                                <div class="field-group-align">
+                                    <div class="field-block">
+                                        <label for="">Name:</label>
+                                        <input type="text" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <label for="">Email:</label>
+                                        <input type="text" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <label for="">Password:</label>
+                                        <input  type="password" class="field-item">
+                                    </div>
+                                    <div class="field-block">
+                                        <label for="">Chose:</label>
+                                        <select name="" id="" class="field-item">
+                                            <option value="">Mango</option>
+                                            <option value="">Carrot</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;form&gt;
+                                &lt;div class=&quot;field-group-align&quot;&gt;
+                                   &lt; ... /&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Grouped</h3>
+                        <p>Add class <code>field-group-grouped</code> to container inside the form element and place field element inside it to triger layout.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#">
+                                <div class="field-group-grouped">
+                                    <div class="field-block">
+                                        <input type="text" placeholder="Username" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <input placeholder="Email" type="text" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <input placeholder="Password" type="password" class="field-item">
+                                    </div>
+                                    <div class="field-block">
+                                        <select class="field-item">
+                                            <option value="">Mango</option>
+                                            <option value="">Carrot</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;form&gt;
+                                &lt;div class=&quot;field-group-grouped&quot;&gt;
+                                    &lt; ... /&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Inline</h3>
+                        <p>Add class <code>field-group-inline</code> to container inside the form element and place field element inside it to triger layout.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <form action="#">
+                                <div class="field-group-inline">
+                                    <div class="field-block">
+                                        <input type="text" placeholder="Username" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <input placeholder="Email" type="text" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <input placeholder="Password" type="password" class="field-item">
+                                    </div>
+                                    
+                                    <div class="field-block">
+                                        <select name="" id="" class="field-item">
+                                            <option value="">Mango</option>
+                                            <option value="">Carrot</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;form&gt;
+                                &lt;div class=&quot;field-group-inline&quot;&gt;
+                                    &lt; ... /&gt;
+                                &lt;/div&gt;
+                            &lt;/form&gt;
+                        </pre>
+                    </div>
+                </div>
+            
+            
+            
+            </div><!--inner-->
+            
+            
+        </div><!---page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+
+<script src="resources/js/app.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+</body>
+</html>

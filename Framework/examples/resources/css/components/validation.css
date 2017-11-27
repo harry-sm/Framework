@@ -1,0 +1,104 @@
+.field-block {
+  position: relative;
+}
+
+.field-block:after {
+  content: "";
+  width: 0;
+  height: 2px;
+  background-color: #53b381;
+  position: absolute;
+  bottom: -6px;
+  left: 0;
+  z-index: 3;
+  transition: all .15s .5s;
+  -webkit-transition: all .15s .5s;
+}
+
+.field-error,
+.field-success,
+.field-warning {
+  position: relative;
+}
+
+.field-error:after,
+.field-success:after,
+.field-warning:after {
+  width: 100%;
+}
+
+.field-error {
+  color: #e74c3c !important;
+}
+
+.field-error:after {
+  background-color: #e85445;
+}
+
+.field-error input,
+.field-error select,
+.field-error .radio,
+.field-error .check {
+  color: #e74c3c !important;
+  border-color: rgba(209, 66, 51, 0.2);
+}
+
+.field-error input::-webkit-input-placeholder,
+.field-error select::-webkit-input-placeholder,
+.field-error .radio::-webkit-input-placeholder,
+.field-error .check::-webkit-input-placeholder {
+  color: #e74c3c;
+}
+
+.field-error input:-moz-placeholder,
+.field-error select:-moz-placeholder,
+.field-error .radio:-moz-placeholder,
+.field-error .check:-moz-placeholder {
+  color: #e74c3c;
+}
+
+.field-error input:-ms-input-placeholder,
+.field-error select:-ms-input-placeholder,
+.field-error .radio:-ms-input-placeholder,
+.field-error .check:-ms-input-placeholder {
+  color: #e74c3c;
+}
+
+.prompt-block {
+  width: 100%;
+  padding: 20px;
+  margin-bottom: 20px;
+  color: #fff;
+  background-color: #e85445;
+ display: none;
+  z-index: 99999;
+}
+.error .prompt-block{
+	display: block;
+}
+.pointer:after {
+  content: '';
+  width: 20px;
+  height: 20px;
+  z-index: 4;
+  position: absolute;
+  display: block;
+}
+
+.pointer.north:after {
+  /* top:-8px; */
+  border-width: 0 100px 200px 100px;
+  border-color: transparent transparent #007bff transparent;
+}
+
+.pointer.south:after {
+  bottom: -8px;
+  border-width: 0 1px 1px 0;
+  border-color: #007bff transparent transparent transparent;
+}
+
+/* greens */
+
+/* blues */
+
+/* oranges */

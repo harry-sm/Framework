@@ -1,0 +1,216 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+/*---------------------------------------------------------*
+	Accordion
+ *---------------------------------------------------------*/
+/*
+ * Dependnce: button.less
+ */
+
+
+.accordion {
+	background-color: #fff;
+	
+	/*
+	 * Animations
+	 */
+	&.fadeIn {
+		.accordion-content {
+			opacity: 0;
+			}
+		.is-active + .accordion-shutter {
+			> .accordion-content {
+				opacity: 1;
+				}
+			} 
+		}
+	&.scaleIn {
+		.accordion-content {
+			opacity: 0;
+			.scale( .5 )
+			}
+		.is-active + .accordion-shutter {
+			> .accordion-content {
+				opacity: 1;
+				.scale( 1 )
+				}
+			} 
+		}
+	
+	&.scaleOut {
+		.accordion-content {
+			opacity: 0;
+			.scale( 1.2 )
+			}
+		.is-active + .accordion-shutter{
+			> .accordion-content {
+				opacity:1;
+				.scale( 1 )
+				}
+			} 
+		}
+
+	&.slideLeft {
+		.accordion-content {
+			opacity: 0;
+			.translate( -100%, 0 );
+			}
+		.is-active + .accordion-shutter {
+			> .accordion-content {
+				opacity:1;
+				.translate( 0, 0 )
+				}
+			}
+		}
+	&.slideRight {
+		.accordion-content {
+			opacity: 0;
+			.translate( 100%, 0 )
+			}
+		.is-active + .accordion-shutter{
+			> .accordion-content {
+				opacity:1;
+				.translate( 0, 0 )
+				}
+			}
+		}
+	&.slideUp {
+		.accordion-content {
+			opacity: 0;
+			.translate( 0, 100% )
+			}
+		.is-active + .accordion-shutter {
+			> .accordion-content {
+				opacity:1;
+				.translate( 0, 0 )
+				}
+			}
+		}
+	&.slideDown {
+		.accordion-content {
+			opacity: 0;
+			.translate( 0, -100% )
+			}
+		.is-active + .accordion-shutter {
+			> .accordion-content {
+				opacity:1;
+				.translate( 0, 0 )
+				}
+			}
+		}
+	&.flip {
+		.accordion-panel{
+			.perspective;
+			}
+		.accordion-content{
+			opacity: 0;
+			.rotateY( 90deg )
+			}
+		.is-active + .accordion-shutter {
+			> .accordion-content{
+				opacity:1;
+				.rotateY( 0deg )
+				}
+			}
+		}
+	
+	/*
+	 * accordion types
+	 */
+	&.vertical {
+		.accordion-tab{
+			border-bottom: 1px solid rgba(0,0,0,.15);
+			&.is-active{
+				border-bottom: 2px solid @bluewood;
+				}
+			}
+		.is-active + .accordion-shutter {
+			height: auto;
+			max-height: 30em;
+			}
+		.accordion-shutter {
+			height: 0;
+			max-height: 0;
+			}
+		} /* accordion-vertical */
+		
+	&.horizontal {
+		height: 300px;
+		
+		.accordion-panel,
+		.accordion-tab,
+		.accordion-shutter {
+			float: left;
+		}
+		.accordion-tab {
+			width: 100px;
+			border-left: 1px solid rgba(0,0,0,.15);
+			&.is-active {
+				border-right: 2px solid @bluewood;
+				}
+			& > span {
+				.rotate(90deg);
+				}
+			}
+		
+		/*
+		 * Shutter state
+		 */
+		.accordion-tab,
+		.accordion-panel,
+		.accordion-shutter,
+		.is-active + .accordion-shutter {
+			height: 100%;
+			}
+		.accordion-shutter{
+			width: 0;
+			max-width: 0;
+			}
+		.is-active + .accordion-shutter {
+			width: auto;
+			max-width: 50em;
+			}
+		
+		}
+	} /* accordion */ 
+
+/*
+ * accordion components
+ */
+.accordion-panel {
+	position:relative;
+	}
+.accordion-tab {
+	margin: 0;
+	padding: 1em;	
+	border-bottom: 1px solid rgba(0,0,0,.15);
+	
+	transition: all .2s ease-out;
+	-webkit-transition: all .2s ease-out;
+	
+	cursor: pointer;
+	
+	&.is-active + .accordion-shutter {
+		visibility: visible;
+		}
+	}
+.accordion-shutter {
+	overflow: hidden;
+	visibility: hidden;
+	
+	.transition( ~'all .3s ease-in' );
+	}
+.accordion-content {
+	margin: 0;
+	overflow: hidden;
+	
+	position: relative;
+	padding: 16/@baseFont;
+
+	.transition(~'all .3s ease-in');
+	}
+
+@import "../utilities/config.less";
+@import "../utilities/utilities.less";

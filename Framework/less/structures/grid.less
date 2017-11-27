@@ -1,0 +1,249 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+ 
+/* 
+	#.# Property Ordering
+	
+•	Box Model
+•	Display
+•	Colors and Typography
+•	Positioning
+•	Other 
+*/
+
+
+ 
+/**
+* #.# Golbal variables
+*
+* Defaults Settings require for Grid Mixin to work
+*/
+@wall:1200; 	/* The entrire width of the grid */
+@bricks:24; 	/* The number of columns */
+@gutter:10; 	/* The space between columns */
+@unit:1px;  	/* The unit of measure for the dimentions of the grid */
+@frame:@bricks; /* The number of sub columns used for nesting */
+	
+
+
+
+/*---------------------------------------------------------*
+	Gutter
+ *---------------------------------------------------------*/
+/*
+ *  Calculate gutter
+ *  Check unit type and calculate gutter base of unit type
+ */ 
+
+.block-gutter( @gutter:@gutter; @unit:@unit ) when ( @gutter > 0 ) {
+	.space( @unit:@unit ) when ( isem( @unit ) ) { 
+		 @space:( ( @gutter )/@unit )
+		}
+	.space(@unit:@unit) when ( ispercentage( @unit ) ) {
+		@space: ( ( @gutter )/@wall ) * 100%;
+		}
+	.space( @unit:@unit ) when ( ispixel( @unit ) ) {
+		@space:( @gutter ) * 1px;
+		}
+	.space( @unit:@unit ) when ( isunit( @unit, rem ) ) {
+		@space: ( ( @gutter )/@unit )
+		}
+	.space;
+	}
+
+/*
+ * Use to genrate gutter in sematic mode
+ */ 
+.gutter( @gutter:@gutter; @unit:@unit ) when ( @gutter > 0 ) {
+	.block-gutter( @gutter; @unit );
+	margin-left: (@space / 2);
+	margin-right: (@space / 2);
+	}
+
+/*---------------------------------------------------------*
+	Columns
+ *---------------------------------------------------------*/
+
+/*
+ * 1. Generates columns of grid.
+ * 2. Stores partial calculation needed to calculate brick/column width.
+ * 3. Check unit type and calculate brick/column width base of unit type
+ */ 
+.block( @brick, @frame:@bricks, @gutter:@gutter, @unit:@unit ){
+
+	@target:(((( @wall / @bricks ) *@frame )/@bricks ) * @brick ); /* 2 */
+	@context:(( @wall / @bricks ) *@frame );
+	
+
+	.cast( @unit:@unit ) when (isem(@unit)) {  /* 3 */
+		width:(((@target - @gutter) / @context) * @context / @unit);
+		}	
+	.cast( @unit:@unit ) when ( isunit(@unit, rem) ) {
+		width:((( @target - @gutter ) / @context ) * @context / @unit );
+		}
+	.cast( @unit:@unit ) when ( ispercentage( @unit ) ) {
+		width:percentage((( @target - @gutter ) / @context ) );
+		}
+	.cast( @unit:@unit ) when ( ispixel(@unit ) ) {
+		width:((( @target - @gutter )/ @context ) * @context * 1px );
+		}
+		
+	.cast;
+	}
+
+/*
+ * Use to generate columns in sematic mode
+ */ 
+.brick( @brick, @frame:@bricks, @gutter:@gutter, @unit:@unit ) {
+	
+	.block( @brick, @frame:@frame, @gutter:@gutter, @unit:@unit );
+	.gutter( @gutter:@gutter, @unit:@unit );
+	
+	display: inline-block;
+	float: left;
+	}
+
+
+/*---------------------------------------------------------*
+	Offset
+ *---------------------------------------------------------*/
+ 
+/*
+ * Stores partial calculation needed to calculate offset
+ * Check unit type and calculate offset base of unit type
+ */ 
+.offset-push( @offset:1; @unit:@unit; @frame:@bricks ) {
+	
+	@target:(((( @wall / @bricks ) *@frame )/@bricks ) * @offset );
+	@context:(( @wall / @bricks ) *@frame );
+	
+	
+	.space( @unit:@unit ) when ( isem(@unit )) {
+		left: (( @target / @context ) * @context ) / @unit;
+		}
+	.space( @unit:@unit ) when ( ispercentage( @unit ) ) {
+		left:( @target / @context ) * 100%;
+		}
+	.space( @unit:@unit ) when ( ispixel( @unit ) ) {
+		left: (( @target )/@context ) * @context * 1px;
+		}
+	.space( @unit:@unit ) when ( isunit( @unit, rem ) ) {
+		left: (( @target / @context ) * @context ) / @unit;
+		}
+	.space;
+	}
+	
+.offset-pull( @offset:1; @unit:@unit; @frame:@bricks ){
+	
+	@target:(((( @wall / @bricks ) *@frame )/@bricks ) * @offset );
+	@context:(( @wall / @bricks ) *@frame );
+	 
+	.space( @unit:@unit ) when ( isem( @unit ) ) {
+		left: (((( @target / @context ) * @context ) / @unit ) * -1 );
+		}
+	.space( @unit:@unit ) when ( ispercentage( @unit ) ) {
+		left:((@target/@context) * 100%) * -1;
+		}
+	.space( @unit:@unit ) when ( ispixel( @unit ) ) {
+		left: (@target /@context) * @context * -1px;
+		}
+	.space( @unit:@unit ) when ( isunit( @unit, rem ) ) {
+		left: (((( @target / @context ) * @context ) / @unit ) * -1 );
+		}
+	.space;
+	} 
+	
+/*
+ * offset
+ */
+
+.pull( @offset:1; @unit:@unit; @frame:@bricks ) {
+	position: relative;
+	.offset-pull( @offset:@offset; @unit:@unit )
+	}
+.push( @offset:1; @unit:@unit; @frame:@bricks ) {
+	position: relative;
+	.offset-push( @offset:@offset; @unit:@unit; @frame )
+	}
+
+
+/*
+ * Clearfix
+ * Force container to conatin float children
+ */ 
+.clearfix,.row, .l-foundation{
+	&:before, &:after{
+		content: " ";
+		display: table;
+		}
+		&:after{
+			clear: both;
+		}
+	}	
+	
+
+/*---------------------------------------------------------*
+	Autogrid
+ *---------------------------------------------------------*/
+/*
+ * Recusive function thats generates grid dimentions and
+ * properties base on the number of block/columns
+ */ 
+.autoGrid(@className:brick){
+	.l-foundation{
+		width: 100%;
+		max-width:1200px;
+		.center;
+		}
+	.row{
+		.block-gutter;	
+		margin-left: (@space *-1)/2;
+		margin-right: (@space *-1)/2;
+		}	
+	[class*="@{className}-"]{
+		width: 100%;
+		float: left;
+		display: inline-block;
+		.gutter;
+			
+	}
+	[class*="pull-"],
+	[class*="push-"]{
+		position:relative;
+		}
+		
+		
+		
+	.grid (@i) when (@i > 0) {
+		.@{className}-@{i} {
+			.block(@i); 
+			}
+		.grid(@i - 1);
+		} 
+		
+	.grid(@bricks);
+
+
+	.offset (@i) when (@i > 0) {
+		.push-@{i} {
+			.offset-push(@i); 
+			}
+		.pull-@{i} {
+			.offset-pull(@i); 
+			}
+	  	.offset(@i - 1);
+		} 
+	
+	.offset(@bricks); 
+
+}//end auto
+
+
+/*
+ * Center columns
+ */ 
+.center{
+	margin: auto;
+	}

@@ -1,0 +1,341 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+/* 
+	#.# Property Ordering
+	
+•	Box Model
+•	Display
+•	Colors and Typography
+•	Positioning
+•	Other 
+*/
+/**
+* #.# Golbal variables
+*
+* Defaults Settings require for Grid Mixin to work
+*/
+/* The entrire width of the grid */
+/* The number of columns */
+/* The space between columns */
+/* The unit of measure for the dimentions of the grid */
+/* The number of sub columns used for nesting */
+/*---------------------------------------------------------*
+	Gutter
+ *---------------------------------------------------------*/
+/*
+ *  Calculate gutter
+ *  Check unit type and calculate gutter base of unit type
+ */
+/*
+ * Use to genrate gutter in sematic mode
+ */
+/*---------------------------------------------------------*
+	Columns
+ *---------------------------------------------------------*/
+/*
+ * 1. Generates columns of grid.
+ * 2. Stores partial calculation needed to calculate brick/column width.
+ * 3. Check unit type and calculate brick/column width base of unit type
+ */
+/*
+ * Use to generate columns in sematic mode
+ */
+/*---------------------------------------------------------*
+	Offset
+ *---------------------------------------------------------*/
+/*
+ * Stores partial calculation needed to calculate offset
+ * Check unit type and calculate offset base of unit type
+ */
+/*
+ * 
+ */
+/*
+ * Clearfix
+ * Force container to conatin float children
+ */
+.clearfix:before,
+.row:before,
+.l-foundation:before,
+.clearfix:after,
+.row:after,
+.l-foundation:after {
+  content: " ";
+  display: table;
+}
+.clearfix:after,
+.row:after,
+.l-foundation:after {
+  clear: both;
+}
+/*---------------------------------------------------------*
+	Autogrid
+ *---------------------------------------------------------*/
+/*
+ * Recusive function thats generates grid dimentions and
+ * properties base on the number of block/columns
+ */
+.l-foundation {
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+.row {
+  margin-left: -5px;
+  margin-right: -5px;
+}
+[class*="brick-"] {
+  width: 100%;
+  float: left;
+  display: inline-block;
+}
+[class*="pull-"],
+[class*="push-"] {
+  position: relative;
+}
+.brick-24 {
+  /* 2 */
+  width: 1190px;
+}
+.brick-23 {
+  /* 2 */
+  width: 1140px;
+}
+.brick-22 {
+  /* 2 */
+  width: 1090px;
+}
+.brick-21 {
+  /* 2 */
+  width: 1040px;
+}
+.brick-20 {
+  /* 2 */
+  width: 990px;
+}
+.brick-19 {
+  /* 2 */
+  width: 940px;
+}
+.brick-18 {
+  /* 2 */
+  width: 890px;
+}
+.brick-17 {
+  /* 2 */
+  width: 840px;
+}
+.brick-16 {
+  /* 2 */
+  width: 790px;
+}
+.brick-15 {
+  /* 2 */
+  width: 740px;
+}
+.brick-14 {
+  /* 2 */
+  width: 690px;
+}
+.brick-13 {
+  /* 2 */
+  width: 640px;
+}
+.brick-12 {
+  /* 2 */
+  width: 590px;
+}
+.brick-11 {
+  /* 2 */
+  width: 540px;
+}
+.brick-10 {
+  /* 2 */
+  width: 490px;
+}
+.brick-9 {
+  /* 2 */
+  width: 440px;
+}
+.brick-8 {
+  /* 2 */
+  width: 390px;
+}
+.brick-7 {
+  /* 2 */
+  width: 340px;
+}
+.brick-6 {
+  /* 2 */
+  width: 290px;
+}
+.brick-5 {
+  /* 2 */
+  width: 240px;
+}
+.brick-4 {
+  /* 2 */
+  width: 190px;
+}
+.brick-3 {
+  /* 2 */
+  width: 140px;
+}
+.brick-2 {
+  /* 2 */
+  width: 90px;
+}
+.brick-1 {
+  /* 2 */
+  width: 40px;
+}
+.push-24 {
+  left: 1200px;
+}
+.pull-24 {
+  left: -1200px;
+}
+.push-23 {
+  left: 1150px;
+}
+.pull-23 {
+  left: -1150px;
+}
+.push-22 {
+  left: 1100px;
+}
+.pull-22 {
+  left: -1100px;
+}
+.push-21 {
+  left: 1050px;
+}
+.pull-21 {
+  left: -1050px;
+}
+.push-20 {
+  left: 1000px;
+}
+.pull-20 {
+  left: -1000px;
+}
+.push-19 {
+  left: 950px;
+}
+.pull-19 {
+  left: -950px;
+}
+.push-18 {
+  left: 900px;
+}
+.pull-18 {
+  left: -900px;
+}
+.push-17 {
+  left: 850px;
+}
+.pull-17 {
+  left: -850px;
+}
+.push-16 {
+  left: 800px;
+}
+.pull-16 {
+  left: -800px;
+}
+.push-15 {
+  left: 750px;
+}
+.pull-15 {
+  left: -750px;
+}
+.push-14 {
+  left: 700px;
+}
+.pull-14 {
+  left: -700px;
+}
+.push-13 {
+  left: 650px;
+}
+.pull-13 {
+  left: -650px;
+}
+.push-12 {
+  left: 600px;
+}
+.pull-12 {
+  left: -600px;
+}
+.push-11 {
+  left: 550px;
+}
+.pull-11 {
+  left: -550px;
+}
+.push-10 {
+  left: 500px;
+}
+.pull-10 {
+  left: -500px;
+}
+.push-9 {
+  left: 450px;
+}
+.pull-9 {
+  left: -450px;
+}
+.push-8 {
+  left: 400px;
+}
+.pull-8 {
+  left: -400px;
+}
+.push-7 {
+  left: 350px;
+}
+.pull-7 {
+  left: -350px;
+}
+.push-6 {
+  left: 300px;
+}
+.pull-6 {
+  left: -300px;
+}
+.push-5 {
+  left: 250px;
+}
+.pull-5 {
+  left: -250px;
+}
+.push-4 {
+  left: 200px;
+}
+.pull-4 {
+  left: -200px;
+}
+.push-3 {
+  left: 150px;
+}
+.pull-3 {
+  left: -150px;
+}
+.push-2 {
+  left: 100px;
+}
+.pull-2 {
+  left: -100px;
+}
+.push-1 {
+  left: 50px;
+}
+.pull-1 {
+  left: -50px;
+}
+/*
+ * Center columns
+ */
+.center {
+  margin: auto;
+}

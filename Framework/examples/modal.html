@@ -1,0 +1,499 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="./resources/css/theme.css"/>
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/button.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/modal.css">
+<link rel="stylesheet" type="text/css" href="resources/css/structures/form.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+
+
+
+<title>Modals</title>
+
+</head>
+<body>
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap content-block">
+            <div class="modal-response">
+                <span></span>
+            </div>
+            
+            <h2 class="title">Modals</h2>
+            <p>
+            The plugin exposes three methods designed to mimic their native JavaScript equivalents.
+            They take various parameters to customise specify defaults. Most common usage is
+            <strong>$(element).modal( type, options, callback )</strong>. available types includes
+            alert, confirm, prompt.
+            </p>
+            <div class="inner">
+            
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Alert</h3>
+                        <p>Basic Alert.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <button id="open-alert" class="btn flat sk-grn has-states">Open</button>
+                            <div class="modal alert">
+                                <div class="modal-container">
+                                    <div class="modal-header oh">
+                                        <h3 class="modal-title">Modal Header</h3>
+                                        <span class="modal-close">&times;</span>
+                                    </div> <!-- modal-header -->
+                                    
+                                    <div class="modal-body">
+                                        <p>Modal Body</p>
+                                    </div><!--  modal-body -->
+                                    
+                                    <div class="modal-footer">
+                                        <a class="modal-btn ok" href="#">ok</a>
+                                    </div><!-- modal-footer -->
+                                </div> <!-- modal-container -->
+                            </div><!-- modal---> 
+                            <div class="modal-overlay"></div> <!-- modal-overlay-->
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;div class=&quot;modal alert&quot;&gt;
+                                &lt;div class=&quot;modal-container&quot;&gt;
+                                    &lt;div class=&quot;modal-header oh&quot;&gt;
+                                        &lt;h3 class=&quot;modal-title&quot;&gt;Modal Header&lt;/h3&gt;
+                                        &lt;span class=&quot;modal-close&quot;&gt;&amp;times;&lt;/span&gt;
+                                    &lt;/div&gt; &lt;!-- modal-header --&gt;
+                                    
+                                    &lt;div class=&quot;modal-body&quot;&gt;
+                                        &lt;p&gt;Modal Body&lt;/p&gt;
+                                    &lt;/div&gt;&lt;!--  modal-body --&gt;
+                                    
+                                    &lt;div class=&quot;modal-footer&quot;&gt;
+                                        &lt;a class=&quot;modal-btn ok&quot; href=&quot;#&quot;&gt;ok&lt;/a&gt;
+                                    &lt;/div&gt;&lt;!-- modal-footer --&gt;
+                                &lt;/div&gt; &lt;!-- modal-container --&gt;
+                            &lt;/div&gt;&lt;!-- modal---&gt; 
+                            &lt;div class=&quot;modal-overlay&quot;&gt;&lt;/div&gt; &lt;!-- modal-overlay--&gt;
+                            
+                        </pre>
+                        <pre class="code language-javascript" data-lang="javascript">
+                            $(".alert").modal('alert',
+                                {
+                                	message: 'this is an alert'
+                                },
+                                function (){
+                                    modalDemo.show("alert callback");
+                                });	
+                            });	
+                        </pre>
+                    </div>
+                </div>
+                
+                
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Confirm</h3>
+                        <p>Basic Confirm.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <button id="open-confirm" class="btn flat sk-grn has-states">Open</button>
+                             <div class="modal confirm">
+                                <div class="modal-container">
+                                    <div class="modal-header oh">
+                                        <h3 class="modal-title">Modal Header</h3>
+                                        <span class="modal-close">&times;</span>
+                                    </div> <!-- modal-header -->
+                                    
+                                    <div class="modal-body">
+                                        <p>Do you wish to condinue?</p>
+                                    </div><!--  modal-body -->
+                                    
+                                    <div class="modal-footer">
+                                        <a class="modal-btn cancel" href="#">cancel</a>
+                                        <a class="modal-btn ok" href="#">yes</a>
+                                    </div><!-- modal-footer -->
+                                </div> <!-- modal-container -->
+                            </div><!-- modal---> 
+                            <div class="modal-overlay"></div> <!-- modal-overlay-->
+                        </div>
+                        <pre class="code language-html" data-lang="html">
+                            &lt;div class=&quot;modal confirm&quot;&gt;
+                                &lt;div class=&quot;modal-container&quot;&gt;
+                                    &lt;div class=&quot;modal-header oh&quot;&gt;
+                                        &lt;h3 class=&quot;modal-title&quot;&gt;Modal Header&lt;/h3&gt;
+                                        &lt;span class=&quot;modal-close&quot;&gt;&amp;times;&lt;/span&gt;
+                                    &lt;/div&gt; &lt;!-- modal-header --&gt;
+                                    
+                                    &lt;div class=&quot;modal-body&quot;&gt;
+                                        &lt;p&gt;Do you wish to condinue?&lt;/p&gt;
+                                    &lt;/div&gt;&lt;!--  modal-body --&gt;
+                                    
+                                    &lt;div class=&quot;modal-footer&quot;&gt;
+                                        &lt;a class=&quot;modal-btn cancel&quot; href=&quot;#&quot;&gt;cancel&lt;/a&gt;
+                                        &lt;a class=&quot;modal-btn ok&quot; href=&quot;#&quot;&gt;yes&lt;/a&gt;
+                                    &lt;/div&gt;&lt;!-- modal-footer --&gt;
+                                &lt;/div&gt; &lt;!-- modal-container --&gt;
+                            &lt;/div&gt;&lt;!-- modal---&gt; 
+                            &lt;div class=&quot;modal-overlay&quot;&gt;&lt;/div&gt; &lt;!-- modal-overlay--&gt;
+                        </pre>
+                        
+                        <pre class="code language-javascript" data-lang="javascript">
+                            $(".confirm").modal('confirm',
+                              {
+                                  message: 'Are you sure you want to continue'
+                              },
+                              function (result){
+                                  if(result)
+                                      modalDemo.show("continue")
+                                  else
+                                      modalDemo.show("stop");
+                              });
+                        </pre>
+                    </div>
+                </div>
+                
+                
+                <div class="example">
+                    <div class="example-label">
+                        <h3>Prompt</h3>
+                        <p>Basic Prompt.</p>
+                    </div>
+                    <div class="components">
+                        <div class="render">
+                            <button id="open-prompt" class="btn flat sk-grn has-states">Open</button>
+                             <div class="modal prompt">
+                                <div class="modal-container">
+                                    <div class="modal-header oh">
+                                        <h3 class="modal-title">Modal Header</h3>
+                                        <span class="modal-close">&times;</span>
+                                    </div> <!-- modal-header -->
+                                    
+                                    <div class="modal-body">
+                                        <p class="">What is your name?</p>
+                                        <form action="">
+                                            <div class="field-block">
+                                                <input type="text" class="field-item prompt-input">
+                                            </div>
+                                        </form>
+                                    </div><!--  modal-body -->
+                                    
+                                    <div class="modal-footer">
+                                        <a class="modal-btn cancel" href="#">cancel</a>
+                                        <a class="modal-btn ok" href="#">yes</a>
+                                    </div><!-- modal-footer -->
+                                </div> <!-- modal-container -->
+                            </div><!-- modal--->
+                            <div class="modal-overlay"></div> <!-- modal-overlay-->
+                        </div>
+                        <pre class="code language-html" data-lang="javascript">
+                            &lt;div class=&quot;modal prompt&quot;&gt;
+                                &lt;div class=&quot;modal-container&quot;&gt;
+                                    &lt;div class=&quot;modal-header oh&quot;&gt;
+                                        &lt;h3 class=&quot;modal-title&quot;&gt;Modal Header&lt;/h3&gt;
+                                        &lt;span class=&quot;modal-close&quot;&gt;&amp;times;&lt;/span&gt;
+                                    &lt;/div&gt; &lt;!-- modal-header --&gt;
+                                    
+                                    &lt;div class=&quot;modal-body&quot;&gt;
+                                        &lt;p class=&quot;&quot;&gt;What is your name?&lt;/p&gt;
+                                        &lt;form action=&quot;&quot;&gt;
+                                            &lt;div class=&quot;field-block&quot;&gt;
+                                                &lt;input type=&quot;text&quot; class=&quot;field-item prompt-input&quot;&gt;
+                                            &lt;/div&gt;
+                                        &lt;/form&gt;
+                                    &lt;/div&gt;&lt;!--  modal-body --&gt;
+                                    
+                                    &lt;div class=&quot;modal-footer&quot;&gt;
+                                        &lt;a class=&quot;modal-btn cancel&quot; href=&quot;#&quot;&gt;cancel&lt;/a&gt;
+                                        &lt;a class=&quot;modal-btn ok&quot; href=&quot;#&quot;&gt;yes&lt;/a&gt;
+                                    &lt;/div&gt;&lt;!-- modal-footer --&gt;
+                                &lt;/div&gt; &lt;!-- modal-container --&gt;
+                            &lt;/div&gt;&lt;!-- modal---&gt;
+                            &lt;div class=&quot;modal-overlay&quot;&gt;&lt;/div&gt; &lt;!-- modal-overlay--&gt;
+                        </pre>
+                        
+                        <pre class="code language-js" data-lang="javascript">
+                           $(".prompt").modal('prompt',
+                            {
+                                message: 'What is your name?'
+                            },
+                            function (result){
+                                    if(result == null)
+                                        modalDemo.show("value is null")
+                                    else
+                                        modalDemo.show("value is "+ result);
+                             });	
+                        </pre>
+                    </div>
+                </div>
+                
+                <div class="params">
+                    <h3 class="ui header">Options</h3>
+              
+                    <table class="table is-striped is-bordered">
+                        <colgroup>
+                            <col width="130">
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead class="sk-grn">
+                            <tr>
+                                <th>Options</th>
+                                <th>Default</th>
+                                <th>Context</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        	<tr>
+                                <td><strong>debug</strong></td>
+                                <td>true</td>
+                                <td> - </td>
+                                <td>Outputs error meaages or warnings to the console</td>
+                            </tr>
+                            <tr>
+                                <td><strong>close</strong></td>
+                                <td>'.modal-close'</td>
+                                <td>All</td>
+                                <td>Close button selector</td>
+                            </tr>
+                            <tr>
+                                <td><strong>animate</strong></td>
+                                <td>scaleIn</td>
+                                <td>All</td>
+                                <td>Animation type</td>
+                            </tr>
+                            <tr>
+                                <td><strong>body</strong></td>
+                                <td>'.modal-body'</td>
+                                <td>All</td>
+                                <td>Modal body selector</td>
+                            </tr>
+                            <tr>
+                                <td><strong>message</strong></td>
+                                <td>empty</td>
+                                <td>All</td>
+                                <td>Create custome message in modal</td>
+                            </tr>
+                            <tr>
+                                <td><strong>ok</strong></td>
+                                <td>'.ok'</td>
+                                <td>All</td>
+                                <td>OK button selector</td>
+                            </tr>
+                            <tr>
+                                <td><strong>cancel</strong></td>
+                                <td>'.cancel'</td>
+                                <td>Confirm & Prompt</td>
+                                <td>Cancel button selector</td>
+                            </tr>
+                            <tr>
+                                <td><strong>input</strong></td>
+                                <td>'.prompt-input'</td>
+                                <td>Prompt</td>
+                                <td>Input Box selector</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                
+                <div class="params">
+                <h3>Callbacks</h3>
+                <p>Callbacks specify a function to occur after a specific behavior.</p>
+                <table class="table is-striped is-bordered">
+                    <thead class="sk-grn">
+                      <tr>
+                      <th>Type</th>
+                      <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>alert</strong></td>
+                        <td>Basic callback. Does not pass any data</td>
+                      </tr>
+                      <tr>
+                        <td><strong>confirm</strong></td>
+                        <td>Callback passes data of result true or false</td>
+                      </tr>
+                      <tr>
+                        <td><strong>prompt</strong></td>
+                        <td>Callback passes data of result input box</td>
+                      </tr>
+                    </tbody>
+                </table>    
+                </div>
+            
+                
+                <div class="params">
+                    <h3 class="ui header">Methods</h3>
+              
+                    <table class="table is-striped is-bordered">
+                        <colgroup>
+                            <col width="130">
+                            <col>
+                            <col>
+                            <col>
+                        </colgroup>
+                        <thead class="sk-grn">
+                             <tr>
+                                <th>Methods</th>
+                                <th>Description</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td><strong>Destroy</strong></td>
+                                <td>Removes all changes to the page made by initialization</td>
+                            </tr>
+                            <tr>
+                                <td><strong>reInitilize</strong></td>
+                                <td>Refreshes cached values for a component after Destroy is called</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+         </div><!---page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+
+
+
+<script type="application/javascript">
+
+	var modalDemo = {
+		show : function(text) {
+			var 
+				hideHandler,
+				elem = $(".modal-response");
+				
+			clearTimeout(hideHandler);	
+			elem.find("span").html(text);
+			elem.delay(200).fadeIn().delay(3000).fadeOut();
+		},
+	};
+
+	$("#open-alert").on("click", function (e){	
+		$(".alert").modal('alert',
+			{
+			message: 'this is an alert'
+			},
+			function (){
+				modalDemo.show("alert callback");
+			});	
+			e.preventDefaut();
+		});
+	$("#open-confirm").on("click", function (e){	
+		$(".confirm").modal('confirm',
+		  {
+			  message: 'Are you sure you want to continue'
+		  },
+		  function (result){
+			  if(result)
+				  modalDemo.show("continue")
+			  else
+				  modalDemo.show("stop");
+		  });	
+		  e.preventDefaut();
+		});
+	$("#open-prompt").on("click", function (e){	
+		$(".prompt").modal('prompt',
+		{
+			message: 'What is your name?'
+		}, function (result){
+				if(result == null)
+					modalDemo.show("value is")
+				else
+					modalDemo.show("value is "+ result);
+			});	
+			
+			e.preventDefaut();
+		});
+		
+	
+	
+</script>
+
+<script src="../js/core.js"></script>
+<script src="../js/modal.js"></script>
+
+
+
+<script src="resources/js/app.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+
+</body>
+</html>

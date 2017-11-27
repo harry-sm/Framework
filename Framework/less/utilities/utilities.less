@@ -1,0 +1,157 @@
+
+
+
+
+
+
+/*---------------------------------------------------------*
+	Global mixins
+ *---------------------------------------------------------*/
+
+/*
+ * 1. Background color
+ * 2. Text color
+ * 3. Bool value if true (1) add active and hover psudo class
+ * 4. Bool value if true (1) add border
+ */
+.sk( @bgc:#fff,  @txc:#fff,  @has-states:0,  @has-border:0 ){
+	color:@txc;
+	background-color:@bgc;	
+	}
+	
+.sk( @bgc:#fff, @txc:#fff, @has-states:0, @has-border:0 ) when ( @has-states=1 ) {
+	color: @txc;
+	background-color: @bgc;
+	
+	&.has-states{
+		&:hover{
+			background-color: lighten( @bgc, 5% );
+			}
+		&:active{
+			background-color: darken( @bgc, 5% );
+			}
+		}	
+	}
+	
+.sk( @bgc:#fff, @txc:#fff, @has-states:0, @has-border:0 ) when ( @has-border=1 ) {
+	color: @txc;
+	background-color: @bgc;
+	
+	&.has-border{
+		border: 1px solid darken( @bgc, 10% );
+		}
+	}
+ 
+
+
+/*
+ * Reference
+ * http://css-tricks.com/snippets/css/useful-css3-less-mixins/
+ */
+
+/*---------------------------------------------------------*
+	CSS3 mixins
+ *---------------------------------------------------------*/
+.border-radius (@radius: 5px) {
+	border-radius: @radius;
+	-moz-border-radius: @radius;
+    -webkit-border-radius: @radius;
+	}
+.scale ( @factor ) {
+	transform: scale(@factor);
+	-o-transform: scale(@factor);
+	-ms-transform: scale(@factor);
+	-moz-transform: scale(@factor);
+	-webkit-transform: scale(@factor);
+	
+}
+.transition ( @transition ) {
+	transition: @transition;
+	-o-transition: @transition;
+	-ms-transition: @transition; 
+	-moz-transition: @transition;
+	-webkit-transition: @transition;    
+	}
+
+.translate ( @x, @y ) {
+	transform: translate( @x, @y );
+	-o-transform: translate( @x, @y );
+	-ms-transform: translate( @x, @y );
+	-moz-transform: translate( @x, @y );
+	-webkit-transform: translate( @x, @y );
+	}
+.rotateY ( @deg ) {
+	-o-transform: rotateY(@deg);
+	-ms-transform: rotateY(@deg);
+	-moz-transform: rotateY(@deg);
+	-webkit-transform: rotateY(@deg);
+	}
+.rotate ( @deg ) {
+	-o-transform: rotate(@deg);
+	-ms-transform: rotate(@deg);
+	-moz-transform: rotate(@deg);
+	-webkit-transform: rotate(@deg);
+	}
+.perspective ( @value: 1000 ) {
+	perspective: @value;
+	-ms-perspective: @value;
+	-moz-perspective: @value;
+	-webkit-perspective: @value;
+	}
+
+.placeholderColor( @color:#555 ){
+	&::-webkit-input-placeholder {
+	   color:@color;
+		}
+	&:-moz-placeholder {  
+	   color:@color;
+		}
+	&:-ms-input-placeholder{
+		color:@color;
+		}
+	}
+
+
+
+/*---------------------------------------------------------*
+	Table and List states mixins
+ *---------------------------------------------------------*/
+/*
+ * Stripe table and list rows
+ * 1. Even rows color 
+ * 2. Odd rows color
+ * 3. Row selectors
+ */
+.has-stripes( @clr1:#fff, @clr2:#eee,  @selector: ~'tbody tr' ) {
+	&.is-striped{
+		>@{selector}:nth-child(even){
+			background-color: @clr1;
+			}
+		>@{selector}:nth-child(odd){
+			background-color: @clr2;
+			}
+		}
+	}
+
+/*
+ * Add hover state on table and list rows
+ * 1. Even rows color 
+ * 2. Odd rows color
+ * 3. Row selectors
+ */
+.has-hovering( @clr:#fff,  @selector: ~'tbody tr' ) when ( lightness( @clr ) < 50% ) {
+	&.is-hovered{
+		>@{selector}:hover{
+			color:#fff !important;
+			background-color: @clr;
+			}
+		}
+	}
+
+.has-hovering( @clr:#fff,  @selector:~'tbody tr' ) when ( lightness( @clr ) > 50% ) {
+	&.is-hovered{
+		>@{selector}:hover{
+			background-color: @clr;
+			}
+		}
+	}

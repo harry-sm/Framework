@@ -1,0 +1,197 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+/*---------------------------------------------------------*
+	Modal
+ *---------------------------------------------------------*/
+/*
+ * Dependnce: button.less
+ */
+
+
+
+.modal-overlay {
+	width: 100%;
+	height: 100%;
+	
+	opacity: 0;	
+	position: fixed;
+	visibility: hidden;
+	
+	background: #1a242f;
+	
+	top: 0;
+	left: 0;
+	z-index: 97;
+	
+	transition: opacity 0.3s, visibility .3s;
+	-webkit-transition: opacity 0.3s, visibility .3s;
+}
+
+.modal {
+	width:100%;
+	max-width:600px;
+	
+	position: fixed;	
+	visibility: hidden;	
+	
+	top: 20px;
+	left: 50%;
+	z-index:999;
+	
+	perspective: 600px;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	
+	transition: visibility .3s;
+	-webkit-transition: visibility .3s;
+	}
+	
+.modal-container {
+	opacity: 0;
+	position: relative;
+	-webkit-transition-duration: .3s
+	}
+
+/*
+ * Animations
+ */
+.scaleIn { 
+	& .modal-container {
+		.scale( .5 );
+		}
+	&.show-modal .modal-container {
+		 .scale( 1 );
+		}
+	}
+.scaleOut {
+	& .modal-container {
+		.scale( 1.2 );
+		}
+	&.show-modal .modal-container {
+		.scale( 1 );
+		} 
+	}			
+.slideLeft {
+	& .modal-container {
+		.translate( -100%, 0 )
+		}
+	&.show-modal .modal-container {
+		.translate( 0, 0 )
+		} 
+	}
+.slideRight {
+	& .modal-container {
+		.translate( 100%, 0 )
+		}
+	&.show-modal .modal-container {
+		.translate( 0, 0 )
+		} 
+	}
+.slideUp {
+	& .modal-container {
+		.translate( 0, 100% )
+		}
+	&.show-modal .modal-container {
+		.translate( 0, 0 )
+		} 
+	}
+	
+.slideDown{
+	& .modal-container {
+		.translate( 0,-100%)
+		}
+	&.show-modal .modal-container {
+		.translate( 0, 0 )
+		} 
+	}
+.flip {
+	& .modal-container {
+		.rotateY( 90deg )
+		}
+	&.show-modal .modal-container {
+		.rotateY( 0deg )
+		}
+	}
+
+/*
+ * Modal State: Show
+ */
+.show-modal .modal-container {
+	opacity: 1;
+	}
+.show-modal,
+.show-modal ~ .modal-overlay {
+	opacity: 1;
+	visibility: visible;
+	}
+	
+
+/*
+ * Modal components
+ */
+.modal-body {
+	padding: 16/@baseFont;
+	background-color: #f5f5f5;
+	}
+	
+.modal-header {
+	width: 100%;
+	padding: 10px;
+	
+	display: table;
+	position: relative;
+	
+	color: #fff;
+	background-color: #4daf7c;
+
+	
+	& > * {
+		margin: 0;
+		padding: 10px;
+		display: table-cell;
+		}
+	}
+	
+
+.modal-close {
+	font-size: 1.5em;
+	text-align: right;
+	vertical-align: top;
+	cursor: pointer;
+	}
+	
+.modal-footer {
+	text-align: right;
+	background: #e0e0e0;
+	}
+.modal-header, 
+.modal-footer {
+	padding: 10/@baseFont 15/@baseFont;
+	}
+
+.modal-btn {
+	border: 0;
+	margin: 0;
+	min-height: 1em;
+	padding: 0.8125em 1.5em;
+	
+	outline: 0;
+	
+	display: inline-block;
+	vertical-align: middle;
+	
+	color: #fff;
+	line-height: 1;
+	font-size: 100%;
+	font-style: normal;
+	text-align: center;
+	text-decoration: none;
+	text-transform: uppercase;
+	
+	background-color: #4daf7c;
+	}
+
+@import "../utilities/config.less";
+@import "../utilities/utilities.less";

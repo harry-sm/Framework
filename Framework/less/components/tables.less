@@ -1,0 +1,101 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+
+
+/*---------------------------------------------------------*
+	Table
+ *---------------------------------------------------------*/
+
+
+.table {
+	width: 100%;
+	border: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+	}
+.table thead > tr > th, 
+.table tr > td {
+	border-bottom: 1px solid #ddd;
+	}
+.table tr:last-child {
+	border: 0;
+	}
+.table>thead > tr > th {
+	text-align: left;
+	}
+.table > thead > tr > th, 
+.table > tbody > tr > td {
+	padding: 12px;
+	vertical-align: middle;
+	line-height: 1.428571429;
+	}
+.table thead > tr > th {
+	font-weight: 600;
+	}
+
+/*---------------------------------------------------------*
+	stripped table
+ *---------------------------------------------------------*/
+
+ .table {
+	.has-stripes(#eee, #fff, ~'tbody > tr');
+	}
+
+/*---------------------------------------------------------*
+	Bordered table
+ *---------------------------------------------------------*/
+ 
+.table.is-bordered{
+	border: 1px solid #ddd;
+	}
+.table.is-bordered > thead > tr > th, 
+.table.is-bordered > tbody > tr > td {
+	border-left: 1px solid #ddd;
+	}
+.table.is-bordered > thead > tr > th:first-child {
+	border-left: 0;
+	}
+
+/*---------------------------------------------------------*
+	Hover tables
+ *---------------------------------------------------------*/
+
+.table{
+	.has-hovering(#eaeaea, ~'tbody > tr');
+	}
+/*---------------------------------------------------------*
+	Condensed tables
+ *---------------------------------------------------------*/
+
+.table.is-condensed > thead > tr >th,
+.table.is-condensed> tbody > tr > td {
+	padding: 6px;
+	font-size: 15px;
+	}
+	
+/*---------------------------------------------------------*
+	Table cell states
+ *---------------------------------------------------------*/
+.table {	
+	.error {
+		color: #c0392b;
+		border-left: 2px solid #c0392b !important;
+		background-color: rgba(209, 66, 51, .1);
+		}
+	.success {
+		color: #4DAF7C;
+		border-left: 2px solid #4DAF7C !important;
+		border-right: 2px solid #4DAF7C !important;
+		background-color: rgba(77, 175, 124, .1);
+		}
+	.warning {
+		color: #E67E22;
+		border-left: 2px solid #E67E22 !important;
+		background-color: rgba(230, 126, 34, .1);
+		}
+	}
+	
+@import "../utilities/config.less";
+@import "../utilities/utilities.less";

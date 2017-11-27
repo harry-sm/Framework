@@ -1,0 +1,319 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+/*---------------------------------------------------------*
+	accordion
+ *---------------------------------------------------------*/
+/*
+ * Dependnce: button.less
+ */
+.accordion {
+  background-color: #fff;
+  /*
+	 * Animations
+	 */
+  /*
+	 * accordion types
+	 */
+  /* accordion-vertical */
+}
+.accordion.fadeIn .accordion-content {
+  opacity: 0;
+}
+.accordion.fadeIn .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+}
+.accordion.scaleIn .accordion-content {
+  opacity: 0;
+  transform: scale(0.5);
+  -o-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  -moz-transform: scale(0.5);
+  -webkit-transform: scale(0.5);
+}
+.accordion.scaleIn .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+}
+.accordion.scaleOut .accordion-content {
+  opacity: 0;
+  transform: scale(1.2);
+  -o-transform: scale(1.2);
+  -ms-transform: scale(1.2);
+  -moz-transform: scale(1.2);
+  -webkit-transform: scale(1.2);
+}
+.accordion.scaleOut .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  transform: scale(1);
+  -o-transform: scale(1);
+  -ms-transform: scale(1);
+  -moz-transform: scale(1);
+  -webkit-transform: scale(1);
+}
+.accordion.slideLeft .accordion-content {
+  opacity: 0;
+  transform: translate(-100%, 0);
+  -o-transform: translate(-100%, 0);
+  -ms-transform: translate(-100%, 0);
+  -moz-transform: translate(-100%, 0);
+  -webkit-transform: translate(-100%, 0);
+}
+.accordion.slideLeft .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+}
+.accordion.slideRight .accordion-content {
+  opacity: 0;
+  transform: translate(100%, 0);
+  -o-transform: translate(100%, 0);
+  -ms-transform: translate(100%, 0);
+  -moz-transform: translate(100%, 0);
+  -webkit-transform: translate(100%, 0);
+}
+.accordion.slideRight .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+}
+.accordion.slideUp .accordion-content {
+  opacity: 0;
+  transform: translate(0, 100%);
+  -o-transform: translate(0, 100%);
+  -ms-transform: translate(0, 100%);
+  -moz-transform: translate(0, 100%);
+  -webkit-transform: translate(0, 100%);
+}
+.accordion.slideUp .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+}
+.accordion.slideDown .accordion-content {
+  opacity: 0;
+  transform: translate(0, -100%);
+  -o-transform: translate(0, -100%);
+  -ms-transform: translate(0, -100%);
+  -moz-transform: translate(0, -100%);
+  -webkit-transform: translate(0, -100%);
+}
+.accordion.slideDown .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  transform: translate(0, 0);
+  -o-transform: translate(0, 0);
+  -ms-transform: translate(0, 0);
+  -moz-transform: translate(0, 0);
+  -webkit-transform: translate(0, 0);
+}
+.accordion.flip .accordion-panel {
+  perspective: 1000;
+  -ms-perspective: 1000;
+  -moz-perspective: 1000;
+  -webkit-perspective: 1000;
+}
+.accordion.flip .accordion-content {
+  opacity: 0;
+  -o-transform: rotateY(90deg);
+  -ms-transform: rotateY(90deg);
+  -moz-transform: rotateY(90deg);
+  -webkit-transform: rotateY(90deg);
+}
+.accordion.flip .is-active + .accordion-shutter > .accordion-content {
+  opacity: 1;
+  -o-transform: rotateY(0deg);
+  -ms-transform: rotateY(0deg);
+  -moz-transform: rotateY(0deg);
+  -webkit-transform: rotateY(0deg);
+}
+.accordion.vertical .accordion-tab {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+}
+.accordion.vertical .accordion-tab.is-active {
+  border-bottom: 2px solid #34495e;
+}
+.accordion.vertical .is-active + .accordion-shutter {
+  height: auto;
+  max-height: 30em;
+}
+.accordion.vertical .accordion-shutter {
+  height: 0;
+  max-height: 0;
+}
+.accordion.horizontal {
+  height: 300px;
+  /*
+		 * Shutter state
+		 */
+}
+.accordion.horizontal .accordion-panel,
+.accordion.horizontal .accordion-tab,
+.accordion.horizontal .accordion-shutter {
+  float: left;
+}
+.accordion.horizontal .accordion-tab {
+  width: 100px;
+  border-left: 1px solid rgba(0, 0, 0, 0.15);
+}
+.accordion.horizontal .accordion-tab.is-active {
+  border-right: 2px solid #34495e;
+}
+.accordion.horizontal .accordion-tab > span {
+  -o-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
+  -moz-transform: rotate(90deg);
+  -webkit-transform: rotate(90deg);
+}
+.accordion.horizontal .accordion-tab,
+.accordion.horizontal .accordion-panel,
+.accordion.horizontal .accordion-shutter,
+.accordion.horizontal .is-active + .accordion-shutter {
+  height: 100%;
+}
+.accordion.horizontal .accordion-shutter {
+  width: 0;
+  max-width: 0;
+}
+.accordion.horizontal .is-active + .accordion-shutter {
+  width: auto;
+  max-width: 50em;
+}
+/* accordion */
+/*
+ * accordion components
+ */
+.accordion-panel {
+  position: relative;
+}
+.accordion-tab {
+  margin: 0;
+  padding: 1em;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+  transition: all 0.2s ease-out;
+  -webkit-transition: all 0.2s ease-out;
+  cursor: pointer;
+}
+.accordion-tab.is-active + .accordion-shutter {
+  visibility: visible;
+}
+.accordion-shutter {
+  overflow: hidden;
+  visibility: hidden;
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+.accordion-content {
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+  padding: 1em;
+  transition: all .3s ease-in;
+  -o-transition: all .3s ease-in;
+  -ms-transition: all .3s ease-in;
+  -moz-transition: all .3s ease-in;
+  -webkit-transition: all .3s ease-in;
+}
+/* greens */
+/* blues */
+/* oranges */
+/*--------------------------------------*/
+/*--------------------------------------*/
+/*atoms styles*/
+.cb {
+  clear: both;
+}
+.fn {
+  float: none;
+}
+.fl {
+  float: left;
+}
+.fr {
+  float: right;
+}
+.db {
+  display: block;
+}
+.oh {
+  overflow: hidden;
+}
+.dib {
+  display: inline-block;
+}
+.tr {
+  text-align: right;
+}
+.tc {
+  text-align: center;
+}
+.fwb {
+  font-weight: bold;
+}
+.fwn {
+  font-weight: normal;
+}
+.posr {
+  position: relative;
+}
+.posa {
+  position: absolute;
+}
+.bdn {
+  border: none !important;
+}
+.ellipsis {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+/*---------------------------------------------------------*
+	Global vairables
+ *---------------------------------------------------------*/
+/*
+ *
+ */
+/*
+ * 1. Background color
+ * 2. Text color
+ * 3. Bool value if true (1) add active and hover psudo class
+ * 4. Bool value if true (1) add border
+ */
+/*
+ *	
+ */
+/*---------------------------------------------------------*
+	CSS3 mixins
+ *---------------------------------------------------------*/
+/*---------------------------------------------------------*
+	Table and List states mixins
+ *---------------------------------------------------------*/
+/*
+ * Stripe table and list rows
+ * 1. Even rows color 
+ * 2. Odd rows color
+ * 3. Row selectors
+ */
+/*
+ * Add hover state on table and list rows
+ * 1. Even rows color 
+ * 2. Odd rows color
+ * 3. Row selectors
+ */
+/*---------------------------------------------------------*
+	Generic mixins
+ *---------------------------------------------------------*/

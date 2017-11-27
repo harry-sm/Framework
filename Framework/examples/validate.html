@@ -1,0 +1,758 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="./resources/css/theme.css"/>
+
+<link rel="stylesheet" type="text/css" href="resources/css/structures/form.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/button.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/validation.css">
+
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+<script type="text/javascript" src="../lib/jquery.js"></script>
+
+
+<!-- div.component>h2.header+div.descript+pre.code>code>h3.title+p^div.component-example -->
+<title>Form Validation</title>
+
+</head>
+<body>
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+        <h2 class="title">Form validation</h2>
+        <p>Form validation requires passing in a validation object with the rules required to validate your form.</p>
+        
+            <div class="example">
+                <div class="example-label">
+                    <h3>Login demo</h3>
+                    <p></p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form class="login" action="#" method="post">
+                            <div class="prompt-block"></div>
+                            <div class="field-block">
+                            <input name="user" type="text" class="field field-item" placeholder="Usernamex">
+                            </div>
+                            
+                            <div class="field-block">
+                            <input name="password" placeholder="Passowrd" type="password" class="field field-item password">
+                            </div>
+                            
+                            <div class="field-block">
+                            <input id="pin" name="pin" placeholder="Pin" type="password" class="field field-item">
+                            </div>
+                            
+                            <div class="field-group-inline">            
+                                <div class="field-block">
+                                <label for="blue">
+                                    <div class="check">
+                                    <input class="field" name="remember" name="check" id="blue" type="checkbox" value="option2"/>
+                                    <span></span>
+                                    </div>
+                                    
+                                    Remember me
+                                </label>
+                                </div>            
+                            </div>
+                            
+                            <div class="modal-footer">
+                            <a class="submit-btn btn flat sk-grn has-states" href="#">Ok</a>
+                            <!-- <button class="submit-btn btn flat sk-grn has-states">Ok</button> -->
+                            </div>      
+                        </form>
+                    </div>
+                    <pre class="code language-javascript" data-lang="javascript">
+                    	var login = {
+                              'user' : {
+                                  rules :[
+                                      {
+                                          type : "required",
+                                          prompt : "Username Required"
+                                      },
+                                      {
+                                          type : "minLength[6]",
+                                          prompt : "Your username must be at least 6 characters"
+                                      }
+                                  ]
+                              },
+                              '.password' : {
+                                  rules :[
+                                      {
+                                          type : "required",
+                                          prompt : "Password Required"
+                                      },
+                                      {
+                                          type : "minLength[8]",
+                                          prompt : "Your passowrd must be at least 8 characters"
+                                      },
+                                      {
+                                          type : "contains[numbers:2, chars:1, symbols:2]",
+                                          prompt : "Your passowrd must be at least contain 2 numbers, 1 character and 2 symbols"
+                                      }
+                                  ]
+                              },
+                              '#pin' : {
+                                  rules :[
+                                      {
+                                          type : "length[4]",
+                                          prompt : "Your pin must be 4 numbers"
+                                      },
+                                      {
+                                          type : "numeric",
+                                          prompt : "Your pin must numeric"
+                                      }
+                                  ]
+                              },
+                              'remember' : {
+                                  rules :[
+                                      {
+                                          type : "checked",
+                                          prompt : "You must agree to be remembered"
+                                      },
+                                  ]
+                              }
+                          }
+                          
+                          $(".login").form(login);
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Register</h3>
+                    <p></p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <form class="register" action="#" method="post">
+                            <div class="prompt-block"></div>
+                            <div class="field-block">
+                      			<input name="user" type="text" class="field field-item" placeholder="Username">
+                            </div>
+                            <div class="field-block">
+                            <input name="email" type="email" class="field field-item" placeholder="Email">
+                            </div>
+                            <div class="field-block">
+                            <input name="pass1" placeholder="Passowrd" type="password" class="field field-item">
+                            </div>
+                            
+                            <div class="field-block">
+                            <input name="pass2" placeholder="Confirm Passowrd" type="password" class="field field-item">
+                            </div>
+                            
+                            <div class="field-group-inline">
+                                <p>Gender</p>           
+                                <div class="field-block">
+                                    <label for="blue">
+                                        <div class="radio">
+                                        <input class="field gender" name="gender" type="radio" value="option1"/>
+                                        <span></span>
+                                        </div>
+                                        Male
+                                    </label>
+                                </div>
+                                <div class="field-block">
+                                    <label for="blue">
+                                        <div class="radio">
+                                        <input class="field gender" name="gender" type="radio" value="option2"/>
+                                        <span></span>
+                                        </div>
+                                        Female
+                                    </label>
+                                </div>            
+                            </div>
+                            
+                            <div class="field-group-inline">            
+                                <div class="field-block">
+                                <label for="blue">
+                                    <div class="check">
+                                    <input class="field" name="agree" name="check" id="blue" type="checkbox" value="option2"/>
+                                    <span></span>
+                                    </div>
+                                    
+                                    I agree to the terms and conditions
+                                </label>
+                                </div>            
+                            </div>
+                            
+                            <div class="modal-footer">
+                            <a class="submit-btn btn flat sk-grn has-states" href="#">Ok</a>
+                            <!-- <button class="submit-btn btn flat sk-grn has-states">Ok</button> -->
+                            </div>      
+                        </form>
+                    </div>
+                    <pre class="code language-javascript" data-lang="javascript">
+                    	
+                        var register = {
+                            'user' : {
+                                rules :[
+                                    {
+                                        type : "required",
+                                        prompt : "Username Required"
+                                    },
+                                    {
+                                        type : "maxLength[6]",
+                                        prompt : "Your username must be at least 6 characters"
+                                    }
+                                ]
+                            },
+                            'pass1' : {
+                                rules :[
+                                    {
+                                        type : "required",
+                                        prompt : "Password Required"
+                                    },
+                                    {
+                                        type : "minLength[8]",
+                                        prompt : "Your passowrd must be at least 8 characters"
+                                    },
+                                    {
+                                        type : "contains[numbers:2, chars:1, symbols:2]",
+                                        prompt : "Your passowrd must be at least contain 2 numbers, 1 character and 2 symbols"
+                                    }
+                                ]
+                            },
+                            'pass2' : {
+                                rules :[
+                                    {
+                                        type : "match[pass1]",
+                                        prompt : "Password mismatch"
+                                    }
+                                ]
+                            },
+                            'email' : {
+                                rules :[
+                                    {
+                                        type : "email",
+                                        prompt : "Invalid Email"
+                                    }
+                                ]
+                            },
+                            '.gender' : {
+                                rules :[
+                                    {
+                                        type : "selected",
+                                        prompt : "You must chose and gender"
+                                    },
+                                ]
+                            },
+                            'agree' : {
+                                rules :[
+                                    {
+                                        type : "checked",
+                                        prompt : "You must agree to the terms and conditions"
+                                    },
+                                ]
+                            }
+                        }
+                        
+                            
+                        $(".register").form(register);
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="params">
+                <h3>Validation Rules</h3>
+                <p>Validation rules are a set of conditions required to validate a field</p>
+                <table class="table is-bordered is-striped">
+                    <colgroup>
+                        <col width="150">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                        <tr>
+                          <th>Name</th>
+                          <th>Usage</th>
+                          <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>required</strong></td>
+                        <td>type : 'required'</td>
+                        <td>Checks whether a field is empty</td>
+                      </tr>
+                      <tr>
+                        <td><strong>email</strong></td>
+                        <td>type : 'email'</td>
+                        <td>Checks whether a field is a valid email address</td>
+                      </tr>
+                      <tr>
+                        <td><strong>url</strong></td>
+                        <td>type : 'url'</td>
+                        <td>Checks whether a field is a url</td>
+                      </tr>
+                      <tr>
+                        <td><strong>minLength</strong></td>
+                        <td>type : 'minLength[val]'</td>
+                        <td>Checks whether a field is below a length</td>
+                      </tr>
+                      <tr>
+                        <td><strong>Length</strong></td>
+                        <td>type : 'maxLength[val]'</td>
+                        <td>Checks whether a field is the exact length</td>
+                      </tr>
+                       <tr>
+                        <td><strong>maxLength</strong></td>
+                        <td>type : 'maxLength[val]'</td>
+                        <td>Checks whether a field is longer than a length</td>
+                      </tr>
+
+                      <tr>
+                        <td><strong>not</strong></td>
+                        <td>type : 'not[val]'</td>
+                        <td>Checks whether a field is not a value</td>
+                      </tr>
+                      <tr>
+                        <td><strong>has</strong></td>
+                        <td>type : 'has[val]'</td>
+                        <td>Checks whether a field has a value</td>
+                      </tr>
+                      <tr>
+                        <td><strong>contains</strong></td>
+                        <td>type : 'conatins[numbers: val, chars: val, symbols: val]'</td>
+                        <td>Checks whether a field contains number of character elements specified</td>
+                      </tr>
+                      <tr>
+                        <td><strong>is</strong></td>
+                        <td>type : 'is[val]'</td>
+                        <td>Checks whether a field matches a value</td>
+                      </tr>
+                      <tr>
+                        <td><strong>match</strong></td>
+                        <td>type : 'match[field]'</td>
+                        <td>Checks whether a field matches another field</td>
+                      </tr>
+                      <tr>
+                        <td><strong>checked</strong></td>
+                        <td>type : 'checked'</td>
+                        <td>Checks whether a checkbox field is checked</td>
+                      </tr>
+                      <tr>
+                        <td><strong>selected</strong></td>
+                        <td>type : 'selected'</td>
+                        <td>Checks whether a radio field is checked</td>
+                      </tr>
+                      <tr>
+                        <td><strong>atleast</strong></td>
+                        <td>type : 'atleast[number of fields, field]'</td>
+                        <td>Checks whether the number of fields specified is not empty</td>
+                      </tr>
+                      <tr>
+                        <td><strong>blacklist</strong></td>
+                        <td>type : 'backlist[val, val, val, ...]'</td>
+                        <td>Checks whether field value is in blacklist</td>
+                      </tr>
+                      <tr>
+                        <td><strong>range</strong></td>
+                        <td>type : 'range[min, max]'</td>
+                        <td>Checks whether value falls withing numeric range</td>
+                      </tr>
+                      <tr>
+                        <td><strong>numeric</strong></td>
+                        <td>type : 'numeric'</td>
+                        <td>Checks whether field value is numeric</td>
+                      </tr>
+                      <tr>
+                        <td><strong>alphaNumeric</strong></td>
+                        <td>type : 'alphaNumeric'</td>
+                        <td>Checks whether field value is alpha-numeric</td>
+                      </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Add Rule</h3>
+                    <p>To add a rule the insance data must be retrive. Then call the <code>addRule()</code> function on the instance. The function takes two parameters <strong>( name of rule, test function)</strong>. The test function must return true of false. Test function also takes two parameters <strong>( field value, condition value)</strong>. The condition value is only applicable is bracket syntax is used <strong>eg. rule[condition]</strong>.</p>
+                </div>
+                <div class="components">
+                    <pre class="code language-javascript" data-lang="javascript">
+                        var instance = $("form").data("form");
+                        
+                        instace.addRule("ruleName", function (value, condition){
+                            return (value == condition);
+                        });
+                        
+                        var validation = {
+                        	'field' : {
+                            	rules :[
+                                    {
+                                        type : "ruleName[val]",
+                                        prompt : "some message"
+                                    },
+                                 ]
+                            }
+                        }
+                        
+                    </pre>
+                </div>
+            </div>
+            
+            
+            <div class="params">
+                <h3>Callbacks</h3>
+                <p>Callbacks specify a function to occur after a specific behavior.</p>
+                <table class="table is-striped is-bordered">
+                    <thead class="sk-grn">
+                      <tr>
+                      <th>Setting</th>
+                      <th>Context</th>
+                      <th>Description</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td><strong>valid</strong></td>
+                        <td>field</td>
+                        <td>Callback on each valid field</td>
+                      </tr>
+                      <tr>
+                        <td><strong>invalid</strong></td>
+                        <td>field</td>
+                        <td>Callback on each invalid field</td>
+                      </tr>
+                      <tr>
+                        <td><strong>success</strong></td>
+                        <td>form</td>
+                        <td>Callback if a form is all valid</td>
+                      </tr>
+                      <tr>
+                        <td><strong>failure</strong></td>
+                        <td>form</td>
+                        <td>Callback if any form field is invalid</td>
+                      </tr>
+                    </tbody>
+                </table>    
+            </div>
+            
+            <div class="params">
+                <h3>Options</h3>
+                <p>Validator settings to modify the validator's behavior.</p>
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    
+                    <thead class="sk-grn">
+                        <tr>
+                            <th>Options</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                    	<tr>
+                            <td><strong>debug</strong></td>
+                            <td>true</td>
+                            <td>Outputs error meaages or warnings to the console</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Classes</strong></td>
+                            <td>Class Name</td>
+                            <td>Class names used to attach style to state</td>
+                        </tr>
+                        <tr>
+                            <td>error</td>
+                            <td>'error'</td>
+                            <td>Error class attach to form when state is error</td>
+                        </tr>
+                        <tr>
+                            <td>success</td>
+                            <td>'success'</td>
+                            <td>Success class attach to form when state is success</td>
+                        </tr>
+                        <tr>
+                            <td>fieldErr</td>
+                            <td>'field-error'</td>
+                            <td>Error class attach to field when state is error</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Selectors</strong></td>
+                            <td>Selector Name </td>
+                            <td>Selectors used to match functionality to DOM</td>
+                        </tr>
+                        <tr>
+                            <td>message</td>
+                            <td>'.prompt-block'</td>
+                            <td>Select element to add error messagaes to</td>
+                        </tr>
+                        <tr>
+                            <td>field</td>
+                            <td>'.field'</td>
+                            <td>Selects field element</td>
+                        </tr>
+                        <tr>
+                            <td>group</td>
+                            <td>'.field-block'</td>
+                            <td>Selects field element container</td>
+                        </tr>
+                        <tr>
+                            <td>submit</td>
+                            <td>'.submit-btn'</td>
+                            <td>Selects submit button</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            
+            <div class="params">
+                <h3 class="ui header">Methods</h3>
+          
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                         <tr>
+                            <th>Methods</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Destroy</strong></td>
+                            <td>Removes all changes to the page made by initialization</td>
+                        </tr>
+                        <tr>
+                            <td><strong>reInitilize</strong></td>
+                            <td>Refreshes cached values for a component after Destroy is called</td>
+                        </tr>
+                         <tr>
+                            <td><strong>addRule</strong></td>
+                            <td>Add custom rules to validator</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            
+            
+        
+        </div><!---page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+<script>
+//demo purpose only
+$(document).ready(function(e) {
+	
+	
+var login = {
+	'user' : {
+		rules :[
+			{
+				type : "required",
+				prompt : "Username Required"
+			},
+			{
+				type : "minLength[6]",
+				prompt : "Your username must be at least 6 characters"
+			}
+		]
+	},
+	'.password' : {
+		rules :[
+			{
+				type : "required",
+				prompt : "Password Required"
+			},
+			{
+				type : "minLength[8]",
+				prompt : "Your passowrd must be at least 8 characters"
+			},
+			{
+				type : "contains[numbers:2, chars:1, symbols:2]",
+				prompt : "Your passowrd must be at least contain 2 numbers, 1 character and 2 symbols"
+			}
+		]
+	},
+	'#pin' : {
+		rules :[
+			{
+				type : "length[4]",
+				prompt : "Your pin must be 4 numbers"
+			},
+			{
+				type : "numeric",
+				prompt : "Your pin must numeric"
+			}
+		]
+	},
+	'remember' : {
+		rules :[
+			{
+				type : "checked",
+				prompt : "You must agree to be remembered"
+			},
+		]
+	}
+}
+var register = {
+	'user' : {
+		rules :[
+			{
+				type : "required",
+				prompt : "Username Required"
+			},
+		]
+	},
+	
+	'pass1' : {
+		rules :[
+			{
+				type : "required",
+				prompt : "Password Required"
+			},
+			{
+				type : "minLength[6]",
+				prompt : "Your passowrd must be at least 8 characters"
+			},
+			{
+				type : "contains[numbers:1, chars:1, symbols:1]",
+				prompt : "Your passowrd must be at least contain 1 number, 1 character and 1 symbol"
+			}
+		]
+	},
+	
+	'pass2' : {
+		rules :[
+			{
+				type : "match[pass1]",
+				prompt : "Password mismatch"
+			}
+		]
+	},
+	'email' : {
+		rules :[
+			{
+				type : "email",
+				prompt : "Invalid Email"
+			}
+		]
+	},
+	'gender' : {
+		rules :[
+			{
+				type : "selected[gender]",
+				prompt : "You must chose and gender"
+			},
+		]
+	},
+	'agree' : {
+		rules :[
+			{
+				type : "checked",
+				prompt : "You must agree to the terms and conditions"
+			},
+		]
+	}
+}
+
+
+$(".login").form(login);
+
+/*
+ * Destroy example
+ *
+ * var instance = $(".login").data("form");
+ * instance.destroy();
+ * console.log(instance)
+ *
+ */
+
+	
+$(".register").form(register);
+
+});
+
+
+</script>
+</body>
+<script src="../js/validate.js"></script>
+
+
+<script src="resources/js/app.js"></script>
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+</html>
+
+

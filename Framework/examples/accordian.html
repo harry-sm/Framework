@@ -1,0 +1,359 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/css/theme.css">
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="resources/css/structures/layout.css"/>
+
+
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/button.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/components/accordion.css">
+
+
+ <script type="text/javascript" src="../lib/jquery.js"></script>
+
+<title>Accordion</title>
+
+</head>
+<body>
+
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordion.html">
+                        <span class="bridge-item">accordion</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+                
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+            <h2 class="title">Accordion</h2>
+            <p>An accordion displays a single piece of content, while allowing the option of displaying other related content</p>
+        	<div class="inner">
+            
+            <div class="example">
+                <div class="example-label">
+                    <h4>Vertical accordion</h4>
+                    <p>Add class <code>vertical</code> to <code>accordion</code> element to get vertical accordion</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="accordion vertical">
+                        <div class="accordion-panel">
+                             <div class="sk-grn accordion-tab">
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                            <div class="accordion-shutter sk-sand">
+                                <div class="accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                </div><!-- accordion-content -->
+                            </div><!--accordion-shutter-->
+                        </div><!-- accordion-panel -->
+                        
+                        <div class="accordion-panel">
+                             <div class="sk-grn accordion-tab">
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                            <div class="accordion-shutter sk-sand">
+                                <div class="accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                </div><!-- accordion-content -->
+                            </div><!--accordion-shutter-->
+                        </div><!-- accordion-panel -->
+                        
+                        <div class="accordion-panel">
+                            <div class="sk-grn accordion-tab">
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                            <div class="accordion-shutter sk-sand">
+                                <div class="accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                </div><!-- accordion-content -->
+                            </div><!--accordion-shutter-->
+                        </div><!-- accordion-panel -->
+                    </div>
+                    </div>
+                    <pre class="code language-html">
+                        &lt;div class=&quot;accordion vertical&quot;&gt;
+                        &lt;div class=&quot;accordion-panel&quot;&gt;
+                             &lt;div class=&quot;sk-grn accordion-tab&quot;&gt;
+                                &lt;span&gt;Lorem ipsum dolor sit.&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;accordion-shutter sk-sand&quot;&gt;
+                                &lt;div class=&quot;accordion-content&quot;&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                &lt;/div&gt;&lt;!-- accordion-content --&gt;
+                            &lt;/div&gt;&lt;!--accordion-shutter--&gt;
+                        &lt;/div&gt;&lt;!-- accordion-panel --&gt;
+                        
+                        &lt;div class=&quot;accordion-panel&quot;&gt;
+                             &lt;div class=&quot;sk-grn accordion-tab&quot;&gt;
+                                &lt;span&gt;Lorem ipsum dolor sit.&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;accordion-shutter sk-sand&quot;&gt;
+                                &lt;div class=&quot;accordion-content&quot;&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                &lt;/div&gt;&lt;!-- accordion-content --&gt;
+                            &lt;/div&gt;&lt;!--accordion-shutter--&gt;
+                        &lt;/div&gt;&lt;!-- accordion-panel --&gt;
+                        
+                        &lt;div class=&quot;accordion-panel&quot;&gt;
+                            &lt;div class=&quot;sk-grn accordion-tab&quot;&gt;
+                                &lt;span&gt;Lorem ipsum dolor sit.&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;accordion-shutter sk-sand&quot;&gt;
+                                &lt;div class=&quot;accordion-content&quot;&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                &lt;/div&gt;&lt;!-- accordion-content --&gt;
+                            &lt;/div&gt;&lt;!--accordion-shutter--&gt;
+                        &lt;/div&gt;&lt;!-- accordion-panel --&gt;
+                    &lt;/div&gt;
+                    </pre>
+                    
+                    <pre class="code language-js" data-lang="javascript">
+                        $('.accordion').accordion({
+                            animate	: 'scaleIn'
+                        });
+                    </pre>
+                </div>
+            </div>
+            
+            <!-- experimental use at own risk -->
+            <div class="example" style="display: none">
+                <div class="example-label">
+                    <h3>accordion</h3>
+                    <p>This is a default input field.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <div class="accordion horizontal">
+                        <div class="accordion-panel">
+                             <div class="sk-grn accordion-tab">
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                            <div class="accordion-shutter sk-sand">
+                                <div class="accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                </div><!-- accordion-content -->
+                            </div><!--accordion-shutter-->
+                        </div><!-- accordion-panel -->
+                        
+                        <div class="accordion-panel">
+                             <div class="sk-grn accordion-tab">
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                            <div class="accordion-shutter sk-sand">
+                                <div class="accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                </div><!-- accordion-content -->
+                            </div><!--accordion-shutter-->
+                        </div><!-- accordion-panel -->
+                        
+                        <div class="accordion-panel">
+                            <div class="sk-grn accordion-tab">
+                                <span>Lorem ipsum dolor sit.</span>
+                            </div>
+                            <div class="accordion-shutter sk-sand">
+                                <div class="accordion-content">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?</p>
+                                </div><!-- accordion-content -->
+                            </div><!--accordion-shutter-->
+                        </div><!-- accordion-panel -->
+                    </div>
+                    </div>
+                    <pre class="code language-html">
+                        &lt;div class=&quot;accordion horizontal&quot;&gt;
+                        &lt;div class=&quot;accordion-panel&quot;&gt;
+                             &lt;div class=&quot;sk-grn accordion-tab&quot;&gt;
+                                &lt;span&gt;Lorem ipsum dolor sit.&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;accordion-shutter sk-sand&quot;&gt;
+                                &lt;div class=&quot;accordion-content&quot;&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                &lt;/div&gt;&lt;!-- accordion-content --&gt;
+                            &lt;/div&gt;&lt;!--accordion-shutter--&gt;
+                        &lt;/div&gt;&lt;!-- accordion-panel --&gt;
+                        
+                        &lt;div class=&quot;accordion-panel&quot;&gt;
+                             &lt;div class=&quot;sk-grn accordion-tab&quot;&gt;
+                                &lt;span&gt;Lorem ipsum dolor sit.&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;accordion-shutter sk-sand&quot;&gt;
+                                &lt;div class=&quot;accordion-content&quot;&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                &lt;/div&gt;&lt;!-- accordion-content --&gt;
+                            &lt;/div&gt;&lt;!--accordion-shutter--&gt;
+                        &lt;/div&gt;&lt;!-- accordion-panel --&gt;
+                        
+                        &lt;div class=&quot;accordion-panel&quot;&gt;
+                            &lt;div class=&quot;sk-grn accordion-tab&quot;&gt;
+                                &lt;span&gt;Lorem ipsum dolor sit.&lt;/span&gt;
+                            &lt;/div&gt;
+                            &lt;div class=&quot;accordion-shutter sk-sand&quot;&gt;
+                                &lt;div class=&quot;accordion-content&quot;&gt;
+                                &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsam, quos, iusto, officiis culpa perferendis atque ratione et aperiam architecto impedit quasi saepe dolorum. Aperiam, magnam in aut sequi quo dignissimos?&lt;/p&gt;
+                                &lt;/div&gt;&lt;!-- accordion-content --&gt;
+                            &lt;/div&gt;&lt;!--accordion-shutter--&gt;
+                        &lt;/div&gt;&lt;!-- accordion-panel --&gt;
+                    &lt;/div&gt;
+                    </pre>
+                    
+                    <pre class="code language-js">
+                        
+                    </pre>
+                </div>
+            </div>
+            
+            
+            
+            <div class="params">
+                <h3 class="ui header">Options</h3>
+            
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                        <tr>
+                            <th>Options</th>
+                            <th>Default</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>debug</strong></td>
+                            <td>true</td>
+                            <td>Outputs error meaages or warnings to the console</td>
+                        </tr>
+                        <tr>
+                            <td><strong>tabs</strong></td>
+                            <td>'.tab-btns'</td>
+                            <td>Get tab buttons</td>
+                        </tr>
+                        <tr>
+                            <td><strong>animate</strong></td>
+                            <td>scaleIn</td>
+                            <td>Type animation that should be applied. These are pre written css classes</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            
+            <div class="params">
+                <h3 class="ui header">Methods</h3>
+          
+                <table class="table is-striped is-bordered">
+                    <colgroup>
+                        <col width="130">
+                        <col>
+                        <col>
+                        <col>
+                    </colgroup>
+                    <thead class="sk-grn">
+                         <tr>
+                            <th>Methods</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                       <tr>
+                          <td><strong>Destroy</strong></td>
+                          <td>Removes all changes to the page made by initialization</td>
+                       </tr>
+                       <tr>
+                           <td><strong>reInitilize</strong></td>
+                           <td>Refreshes cached values for a component after Destroy is called</td>
+                       </tr>
+                       <tr>
+                           <td><strong>changeTab</strong></td>
+                           <td>Opens accordion content at index</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        
+            </div>
+		</div><!---page-wrap-->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+<script type="text/javascript">
+$(document).ready(function(e) {
+	$(".vertical").accordion();
+})
+</script>
+
+
+<script src="../js/core.js"></script>
+<script src="../js/accordion.js"></script>
+
+<script src="resources/js/app.js"></script>
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+</body>
+</html>

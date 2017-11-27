@@ -1,0 +1,263 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+
+
+/* 
+	#.# Property Ordering
+	
+•	Box Model
+•	Display
+•	Colors and Typography
+•	Positioning
+•	Other 
+*/
+/*---------------------------------------------------------*
+	Global vairables
+ *---------------------------------------------------------*/
+/*
+ *
+ */
+@borderColor:#ccc;
+@formFontBase:14em;
+
+form {
+	margin:0;
+	font-size:14/@formFontBase;
+	}
+.field-block {
+	width: 100%;
+	
+	display: table;
+	border-collapse: separate;	
+	
+	position: relative;
+		
+	& .field-addon {
+		width: 1%;
+		padding: 6/@formFontBase;
+		position:relative;
+		
+		line-height: 1;
+		white-space: nowrap;
+		vertical-align: middle;
+		
+		background-color: #f9f9f9;
+		& .field-addon:first-child {
+			border-right: 0;
+			}
+		& .field-addon:last-child {
+			border-left: 0;
+			}
+		}
+	& .field-item{
+		margin-bottom: 0;
+		display: table-cell;
+	}
+	}
+.field-item{
+	width: 100%;
+	height: 40/@formFontBase;
+	padding: 6/@formFontBase;
+	
+	background:#fff;
+	
+	outline: 0;
+	display: block;
+	
+	font-size: 100%;
+	line-height: 1.428571429;
+	&:focus{
+		transition: all .5s;
+		border-bottom: 2px solid #1C5B9E;
+		}
+	&:disabled{
+		cursor:not-allowed;
+		border-bottom: 2px solid #7f8c8d;
+	}
+	&[readonly]{
+		border-bottom: 2px solid #16a085;
+	}
+	&:required{
+		border-bottom: 2px solid #f39c12;
+	}
+	&.error{
+		color: #c0392b;
+		border-bottom: 2px solid #c0392b;
+		
+		.placeholderColor(#c0392b);
+		}
+	}
+
+/*---------------------------------------------------------*
+	Field aligngment
+ *---------------------------------------------------------*/
+/*
+ * 1. Set elements to behave as table
+ */
+.field-addon,
+.field-group-align .field-block label,
+.field-block.has-addon > .field-item
+.field-group-align .field-block .field-item, {
+	display: table-cell; /* 1 */
+}
+.field-group-align .field-block .field-item{
+	width:100%;
+}
+
+.field-group-align label,
+.field-group-align .field-item {
+	width: auto;
+	display: inline-block;
+	}
+.field-group-align  label {
+	width: 10em;
+	padding: 0 1em 0 0;
+	
+	text-align: right;
+	vertical-align: middle;
+	}
+.field-group-grouped {
+	& .field-item, .field-block{
+		margin-bottom: 0;
+		}
+	& .field-item {
+		border-bottom-width: 0;
+		&:focus{
+			transition: all .3s;
+			border-bottom: 2px solid #1C5B9E !important;
+			}
+		}
+	& .field-block:last-child > .field-item {
+		border-bottom-width: 1px;
+		}
+	}
+.field-group-inline {
+	& .field-block, 
+	  .field-item{
+		width:auto;
+		}
+	& .field-block {
+		margin-right: -2px;
+		padding-right: 1%;
+		
+		display: inline-block;
+		}
+	}
+.field-item,
+.field-block,
+.field-group-grouped
+.field-group-controls {
+	margin-bottom: 18px;
+	}
+	
+.check,
+.radio,
+.field-item,
+.field-addon {
+	border:1px solid @borderColor;
+	}
+
+.field-group-controls {
+	& .field-block{
+		margin-bottom: 8px;
+		}
+	}
+.field-group-inline {
+	& .check,
+	  .radio{
+		margin-top: -3px;
+		}
+	}
+
+/*
+ * textarea
+ */
+textarea.field-item,
+select[multiple]{
+	height: auto;
+}
+
+
+/*---------------------------------------------------------*
+	Checkbox & Radio
+ *---------------------------------------------------------*/
+/*
+ *
+ */
+
+.check, .radio {
+	width: 14/@formFontBase;
+	height: 14/@formFontBase;
+	margin-top: -3/@formFontBase;
+	margin-right: 4/@formFontBase;
+	
+	
+	position: relative;
+	display: inline-block;	
+	
+	background-color: #FFF;		
+	vertical-align: middle;
+}
+.radio{
+	border-radius: 12/@formFontBase;
+ 	-o-border-radius: 12/@formFontBase;
+	& > span{
+	border-radius:20px;
+	}
+}
+.check > span,
+.radio > span,
+.check > input,
+.radio > input{
+	width: 100%;
+	height: 100%;
+	
+	position: absolute;
+	
+	top: 0;
+	left: 0;
+	
+	cursor: pointer;
+	}
+.check > span,
+.radio > span {
+	display: none;
+	z-index: 1;
+	}
+.check > span,
+.radio > span{
+	border: 2px solid rgba(255,255,255,1);
+	
+	background: #1C5B9E;
+}
+
+.check > input,
+.radio > input{
+	margin: 0;
+	border: 0;
+	outline: 0;
+	
+	opacity: 0;
+	-moz-opacity: 0;
+	filter: alpha(opacity=0);
+		
+	z-index:4;
+	}
+.check > input:checked+span,
+.radio > input:checked+span{
+	display:block !important;
+}
+
+/*
+ * label
+ */
+label {
+	display:block;
+	margin-bottom: 5/@formFontBase;
+	vertical-align:middle;
+	line-height:1;
+}
+		
+@import '../utilities/config.less';
+@import '../utilities/utilities.less';

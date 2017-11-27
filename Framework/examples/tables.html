@@ -1,0 +1,473 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+
+
+<link rel="stylesheet" href="resources/css/core/base.css"/>
+<link rel="stylesheet" href="./resources/css/theme.css"/>
+
+<link rel="stylesheet" type="text/css" href="resources/css/components/tables.css">
+<link rel="stylesheet" type="text/css" href="resources/css/demo.css">
+
+<script type="text/javascript" src="../lib/jquery.js"></script>
+ 
+
+<title>Tables</title>
+
+</head>
+<body>
+
+<div class="flex block view-block">
+	
+	<div class="flex-item l-side-block">
+         <nav class="page-navigation side-bar theme-sk-gry">
+            <div class="sb-fixed">
+                <ul class="vertical-list">
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="grid.html">
+                        <span class="bridge-item">Grid</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="form.html">
+                        <span class="bridge-item">Forms</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tabs.html">
+                        <span class="bridge-item">Tab</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="accordian.html">
+                        <span class="bridge-item">Accordian</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="modal.html">
+                        <span class="bridge-item">Modals</span>
+                    </a>
+                </li>
+                
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="tables.html">
+                        <span class="bridge-item">Tables</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="bridge block nav-link" href="validate.html">
+                        <span class="bridge-item">Validator</span>
+                    </a>
+                </li>
+            </ul>
+            </div>
+        </nav>
+	</div> <!-- side -->
+    <div class="flex-item content-block">
+    	<header class="l-header is-fixed sk-blu">
+            <a id="js-side-menu" class="flat-btn menu-btn" href="#">
+                Menu
+            </a>
+    	</header> <!-- hearder --> 
+        <div class="page-wrap">
+            <h2 class="title">Table</h2>
+            <p>All table have a <strong>width of 100%</strong> tto make the fluid</p>
+            <div class="inner">    
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Table Default</h3>
+                    <p>To style table, add <code>.table</code> class. This class adds padding and border bottom to table elements.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <table class="table">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Warren Buffet</td>
+                                    <td>90</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Steve Jobs</td>
+                                    <td>50</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Narine Smith</td>
+                                    <td>30</td>
+                                    <td>Female</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;table class=&quot;table&quot;&gt;
+                            &lt;colgroup&gt;
+                                &lt;col width=&quot;40&quot;&gt;
+                                &lt;col&gt;
+                                &lt;col&gt;
+                                &lt;col&gt;
+                            &lt;/colgroup&gt;
+                            &lt;thead&gt;
+                                &lt;tr&gt;
+                                    &lt;th&gt;#&lt;/th&gt;
+                                    &lt;th&gt;Name&lt;/th&gt;
+                                    &lt;th&gt;Age&lt;/th&gt;
+                                    &lt;th&gt;Gender&lt;/th&gt;
+                                &lt;/tr&gt;
+                            &lt;/thead&gt;
+                            &lt;tbody&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;1&lt;/td&gt;
+                                    &lt;td&gt;Warren Buffet&lt;/td&gt;
+                                    &lt;td&gt;90&lt;/td&gt;
+                                    &lt;td&gt;Male&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;2&lt;/td&gt;
+                                    &lt;td&gt;Steve Jobs&lt;/td&gt;
+                                    &lt;td&gt;50&lt;/td&gt;
+                                    &lt;td&gt;Male&lt;/td&gt;
+                                &lt;/tr&gt;
+                                &lt;tr&gt;
+                                    &lt;td&gt;2&lt;/td&gt;
+                                    &lt;td&gt;Narine Smith&lt;/td&gt;
+                                    &lt;td&gt;30&lt;/td&gt;
+                                    &lt;td&gt;Female&lt;/td&gt;
+                                &lt;/tr&gt;
+                            &lt;/tbody&gt;
+                        &lt;/table&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Table Bordered</h3>
+                    <p>To add borders to all cells, add <code>.is-bordered</code> class to the table.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <table class="table is-bordered">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead class="sk-grn">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Warren Buffet</td>
+                                    <td>90</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Steve Jobs</td>
+                                    <td>50</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Narine Smith</td>
+                                    <td>30</td>
+                                    <td>Female</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;table class=&quot;table is-bordered&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/table&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Horizontal Striped</h3>
+                    <p>To add stripes to table, add <code>.is-striped</code> class to the table. <strong>Note</strong> this uses the CSS psudeo selector <strong>nth-child</strong>. There is not fall back for browsers that don't support this feature.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <table class="table is-striped">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead class="sk-grn">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Warren Buffet</td>
+                                    <td>90</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Steve Jobs</td>
+                                    <td>50</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Narine Smith</td>
+                                    <td>30</td>
+                                    <td>Female</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                       &lt;table class=&quot;table is-striped&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/table&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Table Hovered</h3>
+                    <p>To add hover effect on each table row, add <code>.is-hovered</code> class to the table.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <table class="table is-hovered">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead class="sk-grn">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Warren Buffet</td>
+                                    <td>90</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Steve Jobs</td>
+                                    <td>50</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Narine Smith</td>
+                                    <td>30</td>
+                                    <td>Female</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                       &lt;table class=&quot;table is-hovered&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/table&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Table Condensed</h3>
+                    <p>To lessen the padding around each table cell, add <code>.is-condensed</code> class to the table.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <table class="table is-condensed">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead class="sk-grn">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>Warren Buffet</td>
+                                    <td>90</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Steve Jobs</td>
+                                    <td>50</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Narine Smith</td>
+                                    <td>30</td>
+                                    <td>Female</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;table class=&quot;table is-condensed&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/table&gt;
+                    </pre>
+                </div>
+            </div>
+            
+            <div class="example">
+                <div class="example-label">
+                    <h3>Table Cell States</h3>
+                    <p>To add state indicators to the table elements, add state class to <code>tr</code> of <code>td</code> element. states available <code>.success</code>, <code>.warning</code> and <code>.error</code>.</p>
+                </div>
+                <div class="components">
+                    <div class="render">
+                        <table class="table">
+                            <colgroup>
+                                <col width="40">
+                                <col>
+                                <col>
+                                <col>
+                            </colgroup>
+                            <thead class="sk-grn">
+                                <tr>
+                                    <th>#</th>
+                                    <th>Name</th>
+                                    <th>Age</th>
+                                    <th>Gender</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="success">Warren Buffet</td>
+                                    <td>90</td>
+                                    <td class="success">Male</td>
+                                </tr>
+                                <tr class="error">
+                                    <td>2</td>
+                                    <td>Steve Jobs</td>
+                                    <td>50</td>
+                                    <td>Male</td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>Narine Smith</td>
+                                    <td>30</td>
+                                    <td class="warning">Female</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <pre class="code language-html" data-lang="html">
+                        &lt;!-- Add classes to table rows --&gt;
+                        
+                        &lt;tr class=&quot;success&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/tr&gt; 
+                        &lt;tr class=&quot;error&quot&gt;
+                            &lt; ... /&gt;
+                        &lt;/tr&gt; 
+                        &lt;tr class=&quot;warning&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/tr&gt;
+                         
+                        &lt;!-- Add classes to table cells --&gt;
+                        
+                        &lt;td class=&quot;success&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;error&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/td&gt;
+                        &lt;td class=&quot;warning&quot;&gt;
+                            &lt; ... /&gt;
+                        &lt;/td&gt;      
+                    </pre>
+                </div>
+            </div>
+        
+            </div><!-- inner -->
+        </div><!-- page-wrap -->
+    </div> <!-- content -->
+</div> <!---flex-->
+
+
+
+
+
+
+
+<script src="resources/js/app.js"></script>
+
+
+
+<link rel="stylesheet" type="text/css" href="resources/plugins/theme-balupton.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesthemebaluptonmincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/style.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterstylesstylemincss">
+<link rel="stylesheet" type="text/css" href="resources/plugins/prettify.css" id="stylesheet-httpbaluptongithubcomjquerysyntaxhighlighterprettifyprettifymincss">
+
+
+
+<script src="resources/plugins/prettify.js"></script>
+<script src="resources/plugins/jquery.syntaxhighlighter.js"></script>
+
+
+
+
+
+</body>
+</html>

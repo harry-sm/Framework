@@ -1,0 +1,97 @@
+/* Less CSS Document */
+/* Will be auto compiled to CSS file on save */
+
+/*---------------------------------------------------------*
+	Buttons
+ *---------------------------------------------------------*/
+/*
+ * 1. Convert pixel unit to ems
+ */
+.btn{
+	margin: 0;
+	padding: (13/@baseFont) (24/@baseFont); /* 1 */
+	
+	outline: 0;
+	display: inline-block;
+	vertical-align: middle;
+
+	line-height: 1;
+	font-size: 100%;
+	font-style: normal;
+	text-align: center;	
+	text-transform: uppercase;
+	text-decoration: none;
+	
+	/*
+	 * Button States
+	 * 1. Flat ui style no borders
+	 * 2. Disable State
+	 * 3. Almost flat (add transparent gradient)
+	 */
+	&.flat{ border:0} /* 1 */
+	
+	&:disabled, /* 2 */
+	&.disabled{
+		 opacity: .7;
+		 color: #666;
+		 background:#ddd !important;
+		 cursor:not-allowed !important;
+		 }
+	}
+	
+.af-btn{ /* 3 */
+	box-shadow: 0 0 0 1px rgba(0,0,0,.09)inset;
+	background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.03));
+	}
+	
+/*
+ * Button Alignment
+ */
+
+.btn-group-inline{
+	display: table;
+	& .m-btn{
+		display:table-cell;
+	}
+	&.fluid{
+		width: 100%;
+		& .fluid-btn{
+			display:table-cell;
+			}
+		& .btn{
+			width:100%;
+			padding-left: 0;
+			padding-right: 0;
+		}
+	}
+}
+
+.btn-group-statcked{
+	& .btn{
+		display:block;
+		}
+	}
+
+
+/*---------------------------------------------------------*
+	Sizes
+ *---------------------------------------------------------*/
+.sz-xs {
+	font-size: 70%;
+}
+
+.sz-sm {
+	font-size: 85%;
+}
+
+.sz-lg {
+	font-size: 110%;
+}
+
+.sz-xl {
+	font-size: 125%;
+}
+
+
+@import "../utilities/config.less";
+@import "../utilities/utilities.less";
